@@ -12,13 +12,22 @@ final class GamesViewController: UIViewController {
 
     var presenter: GamesPresenterProtocol!
 
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var emptyLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
+}
 
-    private func setup() {
+private extension GamesViewController {
+    func setup() {
+        registerCell()
+    }
 
+    func registerCell() {
+        tableView.register(cellType: GamesTableViewCell.self)
     }
 }
 

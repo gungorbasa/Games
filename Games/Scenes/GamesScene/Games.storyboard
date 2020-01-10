@@ -1,28 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Games View Controller-->
         <scene sceneID="Cyy-jp-4tt">
             <objects>
-                <viewController storyboardIdentifier="GamesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g0m-8L-dWl" customClass="GamesViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GamesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g0m-8L-dWl" customClass="GamesViewController" customModule="Games" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nus-kA-2e4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No game has been searched" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAK-nf-UgS">
+                                <rect key="frame" x="20" y="188" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-Rv-CPd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dAK-nf-UgS" firstAttribute="leading" secondItem="wWc-SN-FfI" secondAttribute="leading" constant="20" id="3bz-EA-LgV"/>
+                            <constraint firstItem="WLa-Rv-CPd" firstAttribute="bottom" secondItem="wWc-SN-FfI" secondAttribute="bottom" id="5BD-kO-EEh"/>
+                            <constraint firstItem="WLa-Rv-CPd" firstAttribute="leading" secondItem="wWc-SN-FfI" secondAttribute="leading" id="9wq-ND-zOi"/>
+                            <constraint firstItem="dAK-nf-UgS" firstAttribute="top" secondItem="wWc-SN-FfI" secondAttribute="top" constant="100" id="ViF-HE-Nr2"/>
+                            <constraint firstItem="WLa-Rv-CPd" firstAttribute="top" secondItem="wWc-SN-FfI" secondAttribute="top" id="dAV-tX-SUq"/>
+                            <constraint firstItem="WLa-Rv-CPd" firstAttribute="trailing" secondItem="wWc-SN-FfI" secondAttribute="trailing" id="npm-pC-da4"/>
+                            <constraint firstItem="wWc-SN-FfI" firstAttribute="trailing" secondItem="dAK-nf-UgS" secondAttribute="trailing" constant="20" id="ppx-Do-Cew"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wWc-SN-FfI"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emptyLabel" destination="dAK-nf-UgS" id="0HF-uT-GkI"/>
+                        <outlet property="tableView" destination="WLa-Rv-CPd" id="hoz-tw-oTI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdP-44-RPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="24"/>
+            <point key="canvasLocation" x="-1.4492753623188408" y="23.4375"/>
         </scene>
     </scenes>
 </document>
