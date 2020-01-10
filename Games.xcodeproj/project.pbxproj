@@ -25,6 +25,14 @@
 		239E99BD23C90414003BDA1B /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99B623C90414003BDA1B /* GamesViewController.swift */; };
 		239E99BE23C90414003BDA1B /* GamesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99B723C90414003BDA1B /* GamesBuilder.swift */; };
 		239E99BF23C90414003BDA1B /* GamesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99B823C90414003BDA1B /* GamesInteractor.swift */; };
+		239E99C923C9052C003BDA1B /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239E99C223C9052C003BDA1B /* Favorites.storyboard */; };
+		239E99CA23C9052C003BDA1B /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99C323C9052C003BDA1B /* FavoritesPresenter.swift */; };
+		239E99CB23C9052C003BDA1B /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99C423C9052C003BDA1B /* FavoritesRouter.swift */; };
+		239E99CC23C9052C003BDA1B /* FavoritesContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99C523C9052C003BDA1B /* FavoritesContracts.swift */; };
+		239E99CD23C9052C003BDA1B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99C623C9052C003BDA1B /* FavoritesViewController.swift */; };
+		239E99CE23C9052C003BDA1B /* FavoritesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99C723C9052C003BDA1B /* FavoritesBuilder.swift */; };
+		239E99CF23C9052C003BDA1B /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99C823C9052C003BDA1B /* FavoritesInteractor.swift */; };
+		239E99D123C9093D003BDA1B /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99D023C9093D003BDA1B /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +68,14 @@
 		239E99B623C90414003BDA1B /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		239E99B723C90414003BDA1B /* GamesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesBuilder.swift; sourceTree = "<group>"; };
 		239E99B823C90414003BDA1B /* GamesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesInteractor.swift; sourceTree = "<group>"; };
+		239E99C223C9052C003BDA1B /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		239E99C323C9052C003BDA1B /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		239E99C423C9052C003BDA1B /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
+		239E99C523C9052C003BDA1B /* FavoritesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesContracts.swift; sourceTree = "<group>"; };
+		239E99C623C9052C003BDA1B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		239E99C723C9052C003BDA1B /* FavoritesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesBuilder.swift; sourceTree = "<group>"; };
+		239E99C823C9052C003BDA1B /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
+		239E99D023C9093D003BDA1B /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,7 @@
 		239E994123C8F4E7003BDA1B /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				239E99C023C90499003BDA1B /* Networking */,
 				239E999323C90398003BDA1B /* Scenes */,
 				239E996923C8FA0E003BDA1B /* ReusableView */,
 				239E996423C8F5F3003BDA1B /* Extensions */,
@@ -111,6 +128,7 @@
 				239E994D23C8F4E7003BDA1B /* LaunchScreen.storyboard */,
 				239E995023C8F4E7003BDA1B /* Info.plist */,
 				239E997223C8FEB1003BDA1B /* GamesTabBarViewController.swift */,
+				239E99D023C9093D003BDA1B /* Images.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -146,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				239E99A323C903E1003BDA1B /* GamesScene */,
+				239E99C123C90516003BDA1B /* FavoritesScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -162,6 +181,27 @@
 				239E99B823C90414003BDA1B /* GamesInteractor.swift */,
 			);
 			path = GamesScene;
+			sourceTree = "<group>";
+		};
+		239E99C023C90499003BDA1B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		239E99C123C90516003BDA1B /* FavoritesScene */ = {
+			isa = PBXGroup;
+			children = (
+				239E99C223C9052C003BDA1B /* Favorites.storyboard */,
+				239E99C323C9052C003BDA1B /* FavoritesPresenter.swift */,
+				239E99C423C9052C003BDA1B /* FavoritesRouter.swift */,
+				239E99C523C9052C003BDA1B /* FavoritesContracts.swift */,
+				239E99C623C9052C003BDA1B /* FavoritesViewController.swift */,
+				239E99C723C9052C003BDA1B /* FavoritesBuilder.swift */,
+				239E99C823C9052C003BDA1B /* FavoritesInteractor.swift */,
+			);
+			path = FavoritesScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +287,7 @@
 			files = (
 				239E99B923C90414003BDA1B /* Games.storyboard in Resources */,
 				239E994F23C8F4E7003BDA1B /* LaunchScreen.storyboard in Resources */,
+				239E99C923C9052C003BDA1B /* Favorites.storyboard in Resources */,
 				239E994C23C8F4E7003BDA1B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,9 +310,16 @@
 				239E99BE23C90414003BDA1B /* GamesBuilder.swift in Sources */,
 				239E994723C8F4E7003BDA1B /* ViewController.swift in Sources */,
 				239E994323C8F4E7003BDA1B /* AppDelegate.swift in Sources */,
+				239E99CC23C9052C003BDA1B /* FavoritesContracts.swift in Sources */,
+				239E99CB23C9052C003BDA1B /* FavoritesRouter.swift in Sources */,
 				239E997323C8FEB1003BDA1B /* GamesTabBarViewController.swift in Sources */,
+				239E99D123C9093D003BDA1B /* Images.swift in Sources */,
+				239E99CA23C9052C003BDA1B /* FavoritesPresenter.swift in Sources */,
 				239E99BD23C90414003BDA1B /* GamesViewController.swift in Sources */,
 				239E994523C8F4E7003BDA1B /* SceneDelegate.swift in Sources */,
+				239E99CF23C9052C003BDA1B /* FavoritesInteractor.swift in Sources */,
+				239E99CE23C9052C003BDA1B /* FavoritesBuilder.swift in Sources */,
+				239E99CD23C9052C003BDA1B /* FavoritesViewController.swift in Sources */,
 				239E997123C8FA84003BDA1B /* UITableView+Reusable.swift in Sources */,
 				239E99BF23C90414003BDA1B /* GamesInteractor.swift in Sources */,
 				239E996F23C8FA58003BDA1B /* Reusable.swift in Sources */,

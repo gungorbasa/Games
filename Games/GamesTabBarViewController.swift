@@ -11,6 +11,18 @@ import UIKit
 final class GamesTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        let gamesViewController = GamesBuilder.make()
+        let favoritesViewController = FavoritesBuilder.make()
+        gamesViewController.tabBarItem = UITabBarItem(
+            title: "Games",
+            image: Images.Tabbar.gameControllerActive.image,
+            selectedImage: Images.Tabbar.gameControllerPassive.image
+        )
+        favoritesViewController.tabBarItem = UITabBarItem(
+            title: "Favorites",
+            image: Images.Tabbar.favoritesPassive.image,
+            selectedImage: Images.Tabbar.favoritesActive.image
+        )
+        viewControllers = [gamesViewController, favoritesViewController]
     }
 }
