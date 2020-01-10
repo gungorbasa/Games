@@ -18,6 +18,13 @@
 		239E996F23C8FA58003BDA1B /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E996E23C8FA58003BDA1B /* Reusable.swift */; };
 		239E997123C8FA84003BDA1B /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E997023C8FA84003BDA1B /* UITableView+Reusable.swift */; };
 		239E997323C8FEB1003BDA1B /* GamesTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E997223C8FEB1003BDA1B /* GamesTabBarViewController.swift */; };
+		239E99B923C90414003BDA1B /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239E99B223C90414003BDA1B /* Games.storyboard */; };
+		239E99BA23C90414003BDA1B /* GamesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99B323C90414003BDA1B /* GamesPresenter.swift */; };
+		239E99BB23C90414003BDA1B /* GamesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99B423C90414003BDA1B /* GamesRouter.swift */; };
+		239E99BC23C90414003BDA1B /* GamesContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99B523C90414003BDA1B /* GamesContracts.swift */; };
+		239E99BD23C90414003BDA1B /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99B623C90414003BDA1B /* GamesViewController.swift */; };
+		239E99BE23C90414003BDA1B /* GamesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99B723C90414003BDA1B /* GamesBuilder.swift */; };
+		239E99BF23C90414003BDA1B /* GamesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99B823C90414003BDA1B /* GamesInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +53,13 @@
 		239E996E23C8FA58003BDA1B /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		239E997023C8FA84003BDA1B /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		239E997223C8FEB1003BDA1B /* GamesTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTabBarViewController.swift; sourceTree = "<group>"; };
+		239E99B223C90414003BDA1B /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
+		239E99B323C90414003BDA1B /* GamesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesPresenter.swift; sourceTree = "<group>"; };
+		239E99B423C90414003BDA1B /* GamesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesRouter.swift; sourceTree = "<group>"; };
+		239E99B523C90414003BDA1B /* GamesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesContracts.swift; sourceTree = "<group>"; };
+		239E99B623C90414003BDA1B /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
+		239E99B723C90414003BDA1B /* GamesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesBuilder.swift; sourceTree = "<group>"; };
+		239E99B823C90414003BDA1B /* GamesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +101,7 @@
 		239E994123C8F4E7003BDA1B /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				239E999323C90398003BDA1B /* Scenes */,
 				239E996923C8FA0E003BDA1B /* ReusableView */,
 				239E996423C8F5F3003BDA1B /* Extensions */,
 				239E994223C8F4E7003BDA1B /* AppDelegate.swift */,
@@ -125,6 +140,28 @@
 				239E997023C8FA84003BDA1B /* UITableView+Reusable.swift */,
 			);
 			path = ReusableView;
+			sourceTree = "<group>";
+		};
+		239E999323C90398003BDA1B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				239E99A323C903E1003BDA1B /* GamesScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		239E99A323C903E1003BDA1B /* GamesScene */ = {
+			isa = PBXGroup;
+			children = (
+				239E99B223C90414003BDA1B /* Games.storyboard */,
+				239E99B323C90414003BDA1B /* GamesPresenter.swift */,
+				239E99B423C90414003BDA1B /* GamesRouter.swift */,
+				239E99B523C90414003BDA1B /* GamesContracts.swift */,
+				239E99B623C90414003BDA1B /* GamesViewController.swift */,
+				239E99B723C90414003BDA1B /* GamesBuilder.swift */,
+				239E99B823C90414003BDA1B /* GamesInteractor.swift */,
+			);
+			path = GamesScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239E99B923C90414003BDA1B /* Games.storyboard in Resources */,
 				239E994F23C8F4E7003BDA1B /* LaunchScreen.storyboard in Resources */,
 				239E994C23C8F4E7003BDA1B /* Assets.xcassets in Resources */,
 			);
@@ -227,12 +265,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239E99BB23C90414003BDA1B /* GamesRouter.swift in Sources */,
+				239E99BE23C90414003BDA1B /* GamesBuilder.swift in Sources */,
 				239E994723C8F4E7003BDA1B /* ViewController.swift in Sources */,
 				239E994323C8F4E7003BDA1B /* AppDelegate.swift in Sources */,
 				239E997323C8FEB1003BDA1B /* GamesTabBarViewController.swift in Sources */,
+				239E99BD23C90414003BDA1B /* GamesViewController.swift in Sources */,
 				239E994523C8F4E7003BDA1B /* SceneDelegate.swift in Sources */,
 				239E997123C8FA84003BDA1B /* UITableView+Reusable.swift in Sources */,
+				239E99BF23C90414003BDA1B /* GamesInteractor.swift in Sources */,
 				239E996F23C8FA58003BDA1B /* Reusable.swift in Sources */,
+				239E99BA23C90414003BDA1B /* GamesPresenter.swift in Sources */,
+				239E99BC23C90414003BDA1B /* GamesContracts.swift in Sources */,
 				239E996D23C8FA44003BDA1B /* NibOwnerLoadable.swift in Sources */,
 				239E996B23C8FA1B003BDA1B /* NIBLoadable.swift in Sources */,
 			);
