@@ -39,6 +39,10 @@
 		239E99DB23C9149B003BDA1B /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99DA23C9149B003BDA1B /* ReusableCell.swift */; };
 		239E99DD23C9150B003BDA1B /* GamesTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99DC23C9150B003BDA1B /* GamesTableViewCellViewModel.swift */; };
 		239E99DF23C91527003BDA1B /* ReusableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99DE23C91527003BDA1B /* ReusableCellViewModel.swift */; };
+		239E99E123C924FD003BDA1B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99E023C924FD003BDA1B /* Networking.swift */; };
+		239E99E323C9251F003BDA1B /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99E223C9251F003BDA1B /* Routing.swift */; };
+		239E99E523C92554003BDA1B /* NativeNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99E423C92554003BDA1B /* NativeNetworking.swift */; };
+		239E99E723C92580003BDA1B /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99E623C92580003BDA1B /* URLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,10 @@
 		239E99DA23C9149B003BDA1B /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		239E99DC23C9150B003BDA1B /* GamesTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		239E99DE23C91527003BDA1B /* ReusableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCellViewModel.swift; sourceTree = "<group>"; };
+		239E99E023C924FD003BDA1B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		239E99E223C9251F003BDA1B /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		239E99E423C92554003BDA1B /* NativeNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeNetworking.swift; sourceTree = "<group>"; };
+		239E99E623C92580003BDA1B /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				239E997023C8FA84003BDA1B /* UITableView+Reusable.swift */,
+				239E99E623C92580003BDA1B /* URLSession.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +208,9 @@
 		239E99C023C90499003BDA1B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				239E99E023C924FD003BDA1B /* Networking.swift */,
+				239E99E223C9251F003BDA1B /* Routing.swift */,
+				239E99E423C92554003BDA1B /* NativeNetworking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -343,11 +355,14 @@
 			files = (
 				239E99D723C90FA9003BDA1B /* GamesTableViewCell.swift in Sources */,
 				239E99BB23C90414003BDA1B /* GamesRouter.swift in Sources */,
+				239E99E723C92580003BDA1B /* URLSession.swift in Sources */,
 				239E99BE23C90414003BDA1B /* GamesBuilder.swift in Sources */,
+				239E99E123C924FD003BDA1B /* Networking.swift in Sources */,
 				239E99DF23C91527003BDA1B /* ReusableCellViewModel.swift in Sources */,
 				239E994723C8F4E7003BDA1B /* ViewController.swift in Sources */,
 				239E994323C8F4E7003BDA1B /* AppDelegate.swift in Sources */,
 				239E99CC23C9052C003BDA1B /* FavoritesContracts.swift in Sources */,
+				239E99E523C92554003BDA1B /* NativeNetworking.swift in Sources */,
 				239E99CB23C9052C003BDA1B /* FavoritesRouter.swift in Sources */,
 				239E997323C8FEB1003BDA1B /* GamesTabBarViewController.swift in Sources */,
 				239E99D123C9093D003BDA1B /* Images.swift in Sources */,
@@ -356,6 +371,7 @@
 				239E994523C8F4E7003BDA1B /* SceneDelegate.swift in Sources */,
 				239E99DB23C9149B003BDA1B /* ReusableCell.swift in Sources */,
 				239E99CF23C9052C003BDA1B /* FavoritesInteractor.swift in Sources */,
+				239E99E323C9251F003BDA1B /* Routing.swift in Sources */,
 				239E99D323C90BF2003BDA1B /* Localization.swift in Sources */,
 				239E99CE23C9052C003BDA1B /* FavoritesBuilder.swift in Sources */,
 				239E99CD23C9052C003BDA1B /* FavoritesViewController.swift in Sources */,
