@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GamesTabbarViewController.swift
 //  Games
 //
 //  Created by Gungor Basa on 1/10/20.
@@ -8,14 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, NibLoadable {
-
+final class GamesTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         view.backgroundColor = .red
     }
-
-
 }
-
