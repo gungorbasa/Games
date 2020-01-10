@@ -154,6 +154,7 @@
 		239E996423C8F5F3003BDA1B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				239E997023C8FA84003BDA1B /* UITableView+Reusable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -164,7 +165,6 @@
 				239E996A23C8FA1B003BDA1B /* NIBLoadable.swift */,
 				239E996C23C8FA44003BDA1B /* NibOwnerLoadable.swift */,
 				239E996E23C8FA58003BDA1B /* Reusable.swift */,
-				239E997023C8FA84003BDA1B /* UITableView+Reusable.swift */,
 				239E99DA23C9149B003BDA1B /* ReusableCell.swift */,
 				239E99DE23C91527003BDA1B /* ReusableCellViewModel.swift */,
 			);

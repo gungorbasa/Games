@@ -9,7 +9,7 @@
 import Foundation
 
 struct GamesTableViewCellViewModel: ReusableCellViewModel {
-    var cellType: ReusableCell.Type = GamesTableViewCell.self
+    let cellType: ReusableCell.Type = GamesTableViewCell.self
     
     let imageUrl: String
     let gameTitle: String
