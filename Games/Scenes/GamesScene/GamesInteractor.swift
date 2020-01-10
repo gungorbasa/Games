@@ -12,4 +12,19 @@ final class GamesInteractor: GamesInteractorProtocol {
 
     weak var delegate: GamesInteractorDelegate?
 
+    private let searchThreshold = 3
+
+    func search(_ text: String) {
+        if text.count >= searchThreshold {
+
+        }
+    }
+
+    func fetchGames() {
+
+    }
+
+    func fetchMoreGames() {
+        
+    }
 }

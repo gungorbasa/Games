@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let navController = UINavigationController()
+        navController.navigationBar.prefersLargeTitles = true
         navController.viewControllers = [GamesTabBarController()]
         window.rootViewController = navController
         self.window = window

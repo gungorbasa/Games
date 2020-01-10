@@ -12,6 +12,10 @@ import Foundation
 protocol GamesInteractorProtocol: class {
 
     var delegate: GamesInteractorDelegate? { get set }
+
+    func search(_ text: String)
+    func fetchGames()
+    func fetchMoreGames()
 }
 
 enum GamesInteractorOutput {
@@ -25,11 +29,15 @@ protocol GamesInteractorDelegate: class {
 
 // MARK: - Presenter
 protocol GamesPresenterProtocol: class {
-
+    var viewModels: [ReusableCellViewModel] { get }
+    
+    func viewDidLoad()
+    func searchBar(textDidChange searchText: String)
 }
 
 enum GamesPresenterOutput: Equatable {
-
+    case navigationBar(title: String)
+    case reloadData
 }
 
 // MARK: - View

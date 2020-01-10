@@ -18,4 +18,12 @@ enum Localization {
             return self.rawValue
         }
     }
+
+    enum GamesScreen {
+        case title
+
+        var translation: String {
+            return "Games"
+        }
+    }
 }

@@ -10,6 +10,8 @@ import Foundation
 
 final class GamesPresenter: GamesPresenterProtocol {
 
+    var viewModels: [ReusableCellViewModel] = []
+
     private unowned let view: GamesViewProtocol
 
     private let interactor: GamesInteractorProtocol
@@ -20,6 +22,15 @@ final class GamesPresenter: GamesPresenterProtocol {
         self.interactor = interactor
         self.router = router
         self.interactor.delegate = self
+    }
+
+    func viewDidLoad() {
+        view.handleOutput(.navigationBar(title: Localization.GamesScreen.title.translation))
+        interactor.fetchGames()
+    }
+
+    func searchBar(textDidChange searchText: String) {
+        interactor.search(searchText)
     }
 }
 
