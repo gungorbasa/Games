@@ -93,5 +93,33 @@ public extension UITableView {
             }
             return view
     }
+
+    private func dequeueCellOf(
+        type: ReusableCell.Type,
+        for indexPath: IndexPath?
+    ) -> ReusableCell {
+        let identifier = type.reuseIdentifier
+        let cell: ReusableCell?
+        if let indexPath = indexPath {
+            cell = dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? ReusableCell
+        } else {
+            cell = dequeueReusableCell(withIdentifier: identifier) as? ReusableCell
+        }
+        guard let finalCell = cell else {
+            fatalError(
+                "Can't dequeue cell with identifier \(identifier) of type \(type)."
+                    + "Make sure reuseIdentifier is Correct"
+                    + "And If you are using XIB, make sure you called tableView.register(CellType)"
+            )
+        }
+        return finalCell
+    }
+
+    final func dequeueReusableCellOf(
+        type: ReusableCell.Type,
+        for indexPath: IndexPath
+    ) -> ReusableCell {
+        return dequeueCellOf(type: type, for: indexPath)
+    }
 }
 #endif
