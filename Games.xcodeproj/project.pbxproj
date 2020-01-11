@@ -233,10 +233,10 @@
 		239E999323C90398003BDA1B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				239E9A0A23CA7DC0003BDA1B /* GameDetails */,
-				239E997223C8FEB1003BDA1B /* GamesTabBarViewController.swift */,
 				239E99A323C903E1003BDA1B /* GamesScene */,
 				239E99C123C90516003BDA1B /* FavoritesScene */,
+				239E9A0A23CA7DC0003BDA1B /* GameDetails */,
+				239E997223C8FEB1003BDA1B /* GamesTabBarViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
