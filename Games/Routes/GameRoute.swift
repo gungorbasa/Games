@@ -9,7 +9,7 @@
 import Foundation
 // https://api.rawg.io/api/games?amp=&page=1&page_size=10
 
-enum GameListRoute: Routing {
+enum GameRoute: Routing {
     case games
     case search(_ query: String)
     case dynamic(_ url: String)

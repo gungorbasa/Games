@@ -20,7 +20,7 @@ final class GameListService: GameListServing {
     }
 
     func fetch(_ completion: @escaping (Result<[Game], Error>) -> Void) {
-        networking.run(route: GameListRoute.games) { (result: Result<GameList, Error>) in
+        networking.run(route: GameRoute.games) { (result: Result<GameList, Error>) in
             switch result {
             case .success(let gameList):
                 self.nextPage = gameList.next
@@ -32,7 +32,7 @@ final class GameListService: GameListServing {
     }
 
     func fetchMore(_ completion: @escaping (Result<[Game], Error>) -> Void) {
-        networking.run(route: GameListRoute.dynamic(nextPage ?? "")) { (result: Result<GameList, Error>) in
+        networking.run(route: GameRoute.dynamic(nextPage ?? "")) { (result: Result<GameList, Error>) in
             switch result {
             case .success(let gameList):
                 self.nextPage = gameList.next

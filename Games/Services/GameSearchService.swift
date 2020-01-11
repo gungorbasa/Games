@@ -22,7 +22,7 @@ final class GameSearchService: GameSearchServing {
     }
 
     func fetch(_ query: String, completion: @escaping (Result<[Game], Error>) -> Void) {
-        networking.run(route: GameListRoute.search(query)) { (result: Result<GameList, Error>) in
+        networking.run(route: GameRoute.search(query)) { (result: Result<GameList, Error>) in
             switch result {
             case .success(let gameList):
                 self.nextPage = gameList.next
@@ -34,7 +34,7 @@ final class GameSearchService: GameSearchServing {
     }
 
     func fetchMore(_ completion: @escaping (Result<[Game], Error>) -> Void) {
-        networking.run(route: GameListRoute.dynamic(nextPage ?? "")) { (result: Result<GameList, Error>) in
+        networking.run(route: GameRoute.dynamic(nextPage ?? "")) { (result: Result<GameList, Error>) in
             switch result {
             case .success(let gameList):
                 self.nextPage = gameList.next
