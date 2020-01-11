@@ -33,27 +33,37 @@
                     <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="metaritic:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnk-by-Noi">
-                    <rect key="frame" x="152" y="88" width="61" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5Hj-ji-H0Q">
+                    <rect key="frame" x="152" y="78.5" width="89" height="21.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="metaritic:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnk-by-Noi">
+                            <rect key="frame" x="0.0" y="2.5" width="61" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="96" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxV-ma-ozC">
+                            <rect key="frame" x="65" y="0.0" width="24" height="21.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" red="0.84705882352941175" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="10U-o9-dyA" secondAttribute="bottom" constant="16" id="7An-7s-4Dp"/>
-                <constraint firstItem="Bhn-4R-lCZ" firstAttribute="top" secondItem="Xnk-by-Noi" secondAttribute="bottom" constant="-1" id="9xm-du-zKd"/>
+                <constraint firstItem="Bhn-4R-lCZ" firstAttribute="top" secondItem="5Hj-ji-H0Q" secondAttribute="bottom" constant="4" id="F0u-i2-hMY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bhn-4R-lCZ" secondAttribute="trailing" constant="16" id="Ogj-sn-16Z"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EOa-ct-Ayx" secondAttribute="trailing" constant="16" id="U3B-dH-G9o"/>
-                <constraint firstItem="Xnk-by-Noi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EOa-ct-Ayx" secondAttribute="bottom" constant="8" id="V56-Sx-4aJ"/>
                 <constraint firstItem="10U-o9-dyA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Wra-AJ-UKD"/>
                 <constraint firstItem="Bhn-4R-lCZ" firstAttribute="bottom" secondItem="10U-o9-dyA" secondAttribute="bottom" id="ZNQ-6B-4Am"/>
                 <constraint firstItem="EOa-ct-Ayx" firstAttribute="leading" secondItem="10U-o9-dyA" secondAttribute="trailing" constant="16" id="emL-8B-2ji"/>
-                <constraint firstItem="Xnk-by-Noi" firstAttribute="leading" secondItem="10U-o9-dyA" secondAttribute="trailing" constant="16" id="iQR-N0-F5y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Hj-ji-H0Q" secondAttribute="trailing" constant="16" id="hae-eV-qLS"/>
                 <constraint firstItem="10U-o9-dyA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="jM1-Wa-hmj"/>
                 <constraint firstItem="EOa-ct-Ayx" firstAttribute="top" secondItem="10U-o9-dyA" secondAttribute="top" id="mxl-FH-Fo1"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xnk-by-Noi" secondAttribute="trailing" constant="16" id="pNG-rh-FQk"/>
+                <constraint firstItem="5Hj-ji-H0Q" firstAttribute="leading" secondItem="10U-o9-dyA" secondAttribute="trailing" constant="16" id="o0S-fo-c21"/>
                 <constraint firstItem="Bhn-4R-lCZ" firstAttribute="leading" secondItem="10U-o9-dyA" secondAttribute="trailing" constant="16" id="zsN-xt-QIG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -63,6 +73,7 @@
                 <outlet property="gameTitleLabel" destination="EOa-ct-Ayx" id="Bym-gh-UfF"/>
                 <outlet property="genreLabel" destination="Bhn-4R-lCZ" id="6GB-X2-q9D"/>
                 <outlet property="metacriticLabel" destination="Xnk-by-Noi" id="wFU-yd-ZVo"/>
+                <outlet property="scoreLabel" destination="NxV-ma-ozC" id="NKx-8Z-Clf"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="-85.044642857142847"/>
         </view>

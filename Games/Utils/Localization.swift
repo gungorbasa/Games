@@ -21,9 +21,16 @@ enum Localization {
 
     enum GamesScreen {
         case title
+        case critic
 
         var translation: String {
-            return "Games"
+            switch self {
+            case .title:
+                return "Games"
+            case .critic:
+                return "metacritic"
+            }
+
         }
     }
 }
