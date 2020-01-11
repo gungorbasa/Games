@@ -35,9 +35,9 @@ enum GameListRoute: Routing {
     var parameters: [String : Any] {
         switch self {
         case .games:
-            return ["amp": "&page=1", "page_size": 10]
+            return ["page": "1", "page_size": "10"]
         case .search(let query):
-            return ["amp": "&page=1", "page_size": 10, "&search": query]
+            return ["page": "1", "page_size": "10", "search": query]
         default:
             return [:]
         }

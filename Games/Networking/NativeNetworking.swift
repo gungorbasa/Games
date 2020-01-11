@@ -21,16 +21,15 @@ final class NativeNetworking: Networking {
     private let session: URLSession = .shared
 
     func run<T>(route: Routing, completion: @escaping (Result<T, Error>) -> ()) where T : Decodable, T : Encodable {
-        var path = ""
-        route.parameters.forEach { key, value in
-            path.append("\(key)=\(value)")
+        var urlComponents = URLComponents(string: route.host + route.path)
+        urlComponents?.queryItems = route.parameters.compactMap { key, value in
+            URLQueryItem(name: key, value: value as? String)
         }
-        guard let url = URL(string: route.host + route.path + path) else {
+        
+        guard let url = urlComponents?.url else {
             completion(.failure(URLSessionError.urlError))
             return
         }
-        print(url)
-
         let dataTask = session.dataTask(with: url) { [weak self] result in
             guard let self = self else {
                 completion(.failure(URLSessionError.unknown))
