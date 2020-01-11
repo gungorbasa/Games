@@ -15,11 +15,11 @@ final class GamesBuilder {
         let view = storyboard.instantiateViewController(withIdentifier: "GamesViewController") as! GamesViewController
         // TODO: Injections
         let router = GamesRouter(view)
+        let service = GameListService()
 //        let networkWorker = NetworkWorker(app.networking)
 //        let service = RestaurantListService(networkWorker, database: DbWorker(Database()))
 //        //        MovieListInteractor(app.service)
-        let interactor = GamesInteractor()
-//        let interactor = GamesInteractor(service)
+        let interactor = GamesInteractor(service)
         let presenter = GamesPresenter(view, interactor: interactor, router: router)
         view.presenter = presenter
         return view

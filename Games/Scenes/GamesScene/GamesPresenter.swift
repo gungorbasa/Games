@@ -29,6 +29,10 @@ final class GamesPresenter: GamesPresenterProtocol {
         interactor.fetchGames()
     }
 
+    func fetchMoreGames() {
+        interactor.fetchMoreGames()
+    }
+
     func searchBar(textDidChange searchText: String) {
         interactor.search(searchText)
     }
@@ -37,6 +41,13 @@ final class GamesPresenter: GamesPresenterProtocol {
 extension GamesPresenter: GamesInteractorDelegate {
 
     func handleOutput(_ output: GamesInteractorOutput) {
-
+        switch output {
+        case .fetch(let games):
+            print(games)
+        case .fetchMore(let games):
+            print(games)
+        case .show(let error):
+            print(error.localizedDescription)
+        }
     }
 }

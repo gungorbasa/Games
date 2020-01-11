@@ -19,7 +19,9 @@ protocol GamesInteractorProtocol: class {
 }
 
 enum GamesInteractorOutput {
-
+    case fetch(_ games: [Game])
+    case fetchMore(_ games: [Game])
+    case show(_ error: Error)
 }
 
 protocol GamesInteractorDelegate: class {
@@ -32,6 +34,7 @@ protocol GamesPresenterProtocol: class {
     var viewModels: [ReusableCellViewModel] { get }
     
     func viewDidLoad()
+    func fetchMoreGames()
     func searchBar(textDidChange searchText: String)
 }
 

@@ -3,4 +3,54 @@
    uuid = "0E4CA8AB-D492-4909-AD09-6BC5D8473798"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1A0B550-D2D9-441C-9D47-4B3705EA0218"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Games/Scenes/GamesScene/GamesPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "handleOutput(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E1A0B550-D2D9-441C-9D47-4B3705EA0218 - eb5f7bb36ff7752c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Games.GamesPresenter.handleOutput(Games.GamesInteractorOutput) -&gt; ()"
+                  moduleName = "Games"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gungorbasa/Desktop/Games/Games/Scenes/GamesScene/GamesPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "71">
+               </Location>
+               <Location
+                  uuid = "E1A0B550-D2D9-441C-9D47-4B3705EA0218 - eb5f7bb36ff7752c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Games.GamesPresenter.handleOutput(Games.GamesInteractorOutput) -&gt; ()"
+                  moduleName = "Games"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gungorbasa/Desktop/Games/Games/Scenes/GamesScene/GamesPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "150">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

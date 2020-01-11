@@ -46,6 +46,9 @@
 		239E99EA23C94130003BDA1B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99E923C94130003BDA1B /* Game.swift */; };
 		239E99EC23C941E6003BDA1B /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99EB23C941E6003BDA1B /* Genre.swift */; };
 		239E99EE23C942C6003BDA1B /* GameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99ED23C942C6003BDA1B /* GameList.swift */; };
+		239E99F123C94396003BDA1B /* GameListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F023C94396003BDA1B /* GameListService.swift */; };
+		239E99F423C9450E003BDA1B /* GameListRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F323C9450E003BDA1B /* GameListRoute.swift */; };
+		239E99F623C9B750003BDA1B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F523C9B750003BDA1B /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,9 @@
 		239E99E923C94130003BDA1B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		239E99EB23C941E6003BDA1B /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		239E99ED23C942C6003BDA1B /* GameList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameList.swift; sourceTree = "<group>"; };
+		239E99F023C94396003BDA1B /* GameListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListService.swift; sourceTree = "<group>"; };
+		239E99F323C9450E003BDA1B /* GameListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListRoute.swift; sourceTree = "<group>"; };
+		239E99F523C9B750003BDA1B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,8 @@
 		239E994123C8F4E7003BDA1B /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				239E99F223C944FF003BDA1B /* Routes */,
+				239E99EF23C94385003BDA1B /* Services */,
 				239E99E823C940EE003BDA1B /* DomainModels */,
 				239E99C023C90499003BDA1B /* Networking */,
 				239E999323C90398003BDA1B /* Scenes */,
@@ -267,6 +275,23 @@
 			path = DomainModels;
 			sourceTree = "<group>";
 		};
+		239E99EF23C94385003BDA1B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				239E99F023C94396003BDA1B /* GameListService.swift */,
+				239E99F523C9B750003BDA1B /* Service.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		239E99F223C944FF003BDA1B /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				239E99F323C9450E003BDA1B /* GameListRoute.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,9 +396,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				239E99D723C90FA9003BDA1B /* GamesTableViewCell.swift in Sources */,
+				239E99F123C94396003BDA1B /* GameListService.swift in Sources */,
 				239E99BB23C90414003BDA1B /* GamesRouter.swift in Sources */,
 				239E99E723C92580003BDA1B /* URLSession.swift in Sources */,
 				239E99BE23C90414003BDA1B /* GamesBuilder.swift in Sources */,
+				239E99F623C9B750003BDA1B /* Service.swift in Sources */,
 				239E99E123C924FD003BDA1B /* Networking.swift in Sources */,
 				239E99DF23C91527003BDA1B /* ReusableCellViewModel.swift in Sources */,
 				239E994723C8F4E7003BDA1B /* ViewController.swift in Sources */,
@@ -397,6 +424,7 @@
 				239E99EC23C941E6003BDA1B /* Genre.swift in Sources */,
 				239E997123C8FA84003BDA1B /* UITableView+Reusable.swift in Sources */,
 				239E99BF23C90414003BDA1B /* GamesInteractor.swift in Sources */,
+				239E99F423C9450E003BDA1B /* GameListRoute.swift in Sources */,
 				239E996F23C8FA58003BDA1B /* Reusable.swift in Sources */,
 				239E99BA23C90414003BDA1B /* GamesPresenter.swift in Sources */,
 				239E99BC23C90414003BDA1B /* GamesContracts.swift in Sources */,
