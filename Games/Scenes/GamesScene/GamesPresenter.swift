@@ -50,12 +50,15 @@ extension GamesPresenter: GamesInteractorDelegate {
     func handleOutput(_ output: GamesInteractorOutput) {
         switch output {
         case .fetch(let games):
-            viewModels = factory.games(from: games)
             DispatchQueue.main.async {
+                self.viewModels = self.factory.games(from: games)
                 self.view.handleOutput(.reloadData)
             }
         case .fetchMore(let games):
-            print(games)
+            DispatchQueue.main.async {
+                self.viewModels.append(contentsOf: self.factory.games(from: games))
+                self.view.handleOutput(.reloadData)
+            }
         case .show(let error):
             print(error.localizedDescription)
         }

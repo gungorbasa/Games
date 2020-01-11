@@ -31,6 +31,7 @@ private extension GamesViewController {
 
     func setupTableView() {
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
         tableView.register(cellType: GamesTableViewCell.self)
     }
 
@@ -66,6 +67,15 @@ extension GamesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellOf(type: viewModel.cellType, for: indexPath)
         cell.update(viewModel)
         return cell as? UITableViewCell ?? UITableViewCell()
+    }
+}
+
+extension GamesViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        let threshold = presenter.viewModels.count - 2
+        if indexPaths.last?.row ?? 0 > threshold || indexPaths.first?.row ?? 0 > threshold {
+            presenter.fetchMoreGames()
+        }
     }
 }
 
