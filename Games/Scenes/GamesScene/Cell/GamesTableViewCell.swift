@@ -14,9 +14,21 @@ final class GamesTableViewCell: UITableViewCell, ReusableCell, NibLoadable {
     @IBOutlet private weak var metacriticLabel: UILabel!
     @IBOutlet private weak var genreLabel: UILabel!
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // Also, need to cancel image download request as well
+        gameImageView.image = nil
+    }
+
     func update(_ viewModel: Any?) {
         guard let viewModel = viewModel as? GamesTableViewCellViewModel else { return }
         gameTitleLabel.text = viewModel.gameTitle
         genreLabel.text = viewModel.gameGenres
+        guard let url = URL(string: viewModel.imageUrl) else { return }
+        // For now I am just downloading the image
+        // Reusing tableviewcell's need to be considered
+        // so that we won't have weird behavior of imageview
+        // need cahcing as well
+        gameImageView.load(url: url)
     }
 }

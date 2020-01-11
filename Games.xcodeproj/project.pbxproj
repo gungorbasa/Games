@@ -50,6 +50,7 @@
 		239E99F423C9450E003BDA1B /* GameListRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F323C9450E003BDA1B /* GameListRoute.swift */; };
 		239E99F623C9B750003BDA1B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F523C9B750003BDA1B /* Service.swift */; };
 		239E99FA23C9C93B003BDA1B /* GameCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F923C9C93B003BDA1B /* GameCellFactory.swift */; };
+		239E99FC23C9D31C003BDA1B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99FB23C9D31C003BDA1B /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		239E99F323C9450E003BDA1B /* GameListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListRoute.swift; sourceTree = "<group>"; };
 		239E99F523C9B750003BDA1B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		239E99F923C9C93B003BDA1B /* GameCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellFactory.swift; sourceTree = "<group>"; };
+		239E99FB23C9D31C003BDA1B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			children = (
 				239E997023C8FA84003BDA1B /* UITableView+Reusable.swift */,
 				239E99E623C92580003BDA1B /* URLSession.swift */,
+				239E99FB23C9D31C003BDA1B /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				239E994723C8F4E7003BDA1B /* ViewController.swift in Sources */,
 				239E994323C8F4E7003BDA1B /* AppDelegate.swift in Sources */,
 				239E99CC23C9052C003BDA1B /* FavoritesContracts.swift in Sources */,
+				239E99FC23C9D31C003BDA1B /* UIImageView.swift in Sources */,
 				239E99E523C92554003BDA1B /* NativeNetworking.swift in Sources */,
 				239E99CB23C9052C003BDA1B /* FavoritesRouter.swift in Sources */,
 				239E997323C8FEB1003BDA1B /* GamesTabBarViewController.swift in Sources */,
