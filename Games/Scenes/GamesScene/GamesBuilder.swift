@@ -16,10 +16,11 @@ final class GamesBuilder {
         // TODO: Injections
         let router = GamesRouter(view)
         let service = GameListService()
+        let searchService = GameSearchService()
 //        let networkWorker = NetworkWorker(app.networking)
 //        let service = RestaurantListService(networkWorker, database: DbWorker(Database()))
 //        //        MovieListInteractor(app.service)
-        let interactor = GamesInteractor(service)
+        let interactor = GamesInteractor(service, gameSearchService: searchService)
         let factory = GameCellFactory()
         let presenter = GamesPresenter(view, interactor: interactor, router: router, factory: factory)
         view.presenter = presenter

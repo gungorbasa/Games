@@ -17,7 +17,7 @@ final class GamesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+        presenter.onViewDidLoad()
         setup()
     }
 }
@@ -48,7 +48,11 @@ private extension GamesViewController {
 
 extension GamesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        presenter.searchBar(textDidChange: searchText)
+        presenter.onSearchBar(textDidChange: searchText)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        presenter.onSearchBarCancelButtonClicked()
     }
 }
 
@@ -74,7 +78,7 @@ extension GamesViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         let threshold = presenter.viewModels.count - 2
         if indexPaths.last?.row ?? 0 > threshold || indexPaths.first?.row ?? 0 > threshold {
-            presenter.fetchMoreGames()
+            presenter.onPrefetchRows()
         }
     }
 }

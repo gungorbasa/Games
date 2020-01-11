@@ -10,6 +10,10 @@ import Foundation
 
 final class GamesPresenter: GamesPresenterProtocol {
 
+    enum ModelState {
+        case list, search(String)
+    }
+
     var viewModels: [ReusableCellViewModel] = []
 
     private unowned let view: GamesViewProtocol
@@ -17,6 +21,7 @@ final class GamesPresenter: GamesPresenterProtocol {
     private let interactor: GamesInteractorProtocol
     private let router: GamesRouterProtocol
     private let factory: GameCellFactoring
+    private var state: ModelState = .list
 
     init(
         _ view: GamesViewProtocol,
@@ -31,17 +36,28 @@ final class GamesPresenter: GamesPresenterProtocol {
         self.interactor.delegate = self
     }
 
-    func viewDidLoad() {
+    func onViewDidLoad() {
         view.handleOutput(.navigationBar(title: Localization.GamesScreen.title.translation))
         interactor.fetchGames()
     }
 
-    func fetchMoreGames() {
-        interactor.fetchMoreGames()
+    func onPrefetchRows() {
+        switch state {
+        case .list:
+            interactor.fetchMoreGames()
+        case .search(let query):
+            interactor.search(query)
+        }
     }
 
-    func searchBar(textDidChange searchText: String) {
+    func onSearchBar(textDidChange searchText: String) {
+        state = .search(searchText)
         interactor.search(searchText)
+    }
+
+    func onSearchBarCancelButtonClicked() {
+        state = .list
+        interactor.fetchGames()
     }
 }
 
@@ -57,6 +73,11 @@ extension GamesPresenter: GamesInteractorDelegate {
         case .fetchMore(let games):
             DispatchQueue.main.async {
                 self.viewModels.append(contentsOf: self.factory.games(from: games))
+                self.view.handleOutput(.reloadData)
+            }
+        case .search(let games):
+            DispatchQueue.main.async {
+                self.viewModels = self.factory.games(from: games)
                 self.view.handleOutput(.reloadData)
             }
         case .show(let error):

@@ -12,21 +12,30 @@ final class GamesInteractor: GamesInteractorProtocol {
 
     weak var delegate: GamesInteractorDelegate?
 
-    private let service: GameListServing
+    private let gameListService: GameListServing
+    private let gameSearchService: GameSearchServing
     private let searchThreshold = 3
 
-    init(_ service: GameListServing) {
-        self.service = service
+    init(_ gameListService: GameListServing, gameSearchService: GameSearchServing) {
+        self.gameListService = gameListService
+        self.gameSearchService = gameSearchService
     }
 
     func search(_ text: String) {
         if text.count >= searchThreshold {
-            
+            gameSearchService.fetch(text) { [weak self] result in
+                switch result {
+                case .success(let games):
+                    self?.delegate?.handleOutput(.fetch(games))
+                case .failure(let error):
+                    self?.delegate?.handleOutput(.show(error))
+                }
+            }
         }
     }
 
     func fetchGames() {
-        service.fetch { [weak self] result in
+        gameListService.fetch { [weak self] result in
             switch result {
             case .success(let games):
                 self?.delegate?.handleOutput(.fetch(games))
@@ -37,7 +46,7 @@ final class GamesInteractor: GamesInteractorProtocol {
     }
 
     func fetchMoreGames() {
-        service.fetchMore { [weak self] result in
+        gameListService.fetchMore { [weak self] result in
             switch result {
             case .success(let games):
                 self?.delegate?.handleOutput(.fetchMore(games))
