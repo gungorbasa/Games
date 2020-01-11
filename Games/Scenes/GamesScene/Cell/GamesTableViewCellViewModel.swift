@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct GamesTableViewCellViewModel: ReusableCellViewModel {
-    let cellType: ReusableCell.Type = GamesTableViewCell.self
+struct GamesTableViewCellViewModel: ReusableCellViewModel, Equatable {
+    var cellType: ReusableCell.Type { return GamesTableViewCell.self }
     
     let imageUrl: String
     let gameTitle: String
