@@ -9,6 +9,6 @@
 import Foundation
 
 struct GameList: Codable {
-    let next: String
+    let next: String?
     let results: [Game]
 }

@@ -13,6 +13,6 @@ struct Game: Codable {
     let name: String
     let released: String
     let background_image: String
-    let metacritic: Int
+    let metacritic: Int?
     let genres: [Genre]
 }

@@ -13,6 +13,6 @@ struct GamesTableViewCellViewModel: ReusableCellViewModel {
     
     let imageUrl: String
     let gameTitle: String
-    let gameScore: Int
+    let gameScore: Int?
     let gameGenres: String
 }
