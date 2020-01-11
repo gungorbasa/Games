@@ -13,11 +13,14 @@ enum GameRoute: Routing {
     case games
     case search(_ query: String)
     case dynamic(_ url: String)
+    case details(_ id: String)
 
     var host: String {
         switch self {
         case .games, .search:
             return "https://api.rawg.io/api/"
+        case .details(let id):
+            return "https://api.rawg.io/api/games/\(id)"
         case .dynamic(let urlString):
             return urlString
         }
