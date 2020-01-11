@@ -15,6 +15,8 @@ final class GamesTableViewCell: UITableViewCell, ReusableCell, NibLoadable {
     @IBOutlet private weak var genreLabel: UILabel!
 
     func update(_ viewModel: Any?) {
-        
+        guard let viewModel = viewModel as? GamesTableViewCellViewModel else { return }
+        gameTitleLabel.text = viewModel.gameTitle
+        genreLabel.text = viewModel.gameGenres
     }
 }
