@@ -20,7 +20,8 @@ final class GamesBuilder {
 //        let service = RestaurantListService(networkWorker, database: DbWorker(Database()))
 //        //        MovieListInteractor(app.service)
         let interactor = GamesInteractor(service)
-        let presenter = GamesPresenter(view, interactor: interactor, router: router)
+        let factory = GameCellFactory()
+        let presenter = GamesPresenter(view, interactor: interactor, router: router, factory: factory)
         view.presenter = presenter
         return view
     }

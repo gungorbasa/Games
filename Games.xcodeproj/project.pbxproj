@@ -49,6 +49,7 @@
 		239E99F123C94396003BDA1B /* GameListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F023C94396003BDA1B /* GameListService.swift */; };
 		239E99F423C9450E003BDA1B /* GameListRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F323C9450E003BDA1B /* GameListRoute.swift */; };
 		239E99F623C9B750003BDA1B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F523C9B750003BDA1B /* Service.swift */; };
+		239E99FA23C9C93B003BDA1B /* GameCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F923C9C93B003BDA1B /* GameCellFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		239E99F023C94396003BDA1B /* GameListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListService.swift; sourceTree = "<group>"; };
 		239E99F323C9450E003BDA1B /* GameListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListRoute.swift; sourceTree = "<group>"; };
 		239E99F523C9B750003BDA1B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		239E99F923C9C93B003BDA1B /* GameCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				239E99B623C90414003BDA1B /* GamesViewController.swift */,
 				239E99B723C90414003BDA1B /* GamesBuilder.swift */,
 				239E99B823C90414003BDA1B /* GamesInteractor.swift */,
+				239E99F923C9C93B003BDA1B /* GameCellFactory.swift */,
 			);
 			path = GamesScene;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				239E99BE23C90414003BDA1B /* GamesBuilder.swift in Sources */,
 				239E99F623C9B750003BDA1B /* Service.swift in Sources */,
 				239E99E123C924FD003BDA1B /* Networking.swift in Sources */,
+				239E99FA23C9C93B003BDA1B /* GameCellFactory.swift in Sources */,
 				239E99DF23C91527003BDA1B /* ReusableCellViewModel.swift in Sources */,
 				239E994723C8F4E7003BDA1B /* ViewController.swift in Sources */,
 				239E994323C8F4E7003BDA1B /* AppDelegate.swift in Sources */,

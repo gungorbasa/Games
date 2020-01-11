@@ -16,7 +16,7 @@ final class GameListService: GameListServing {
     typealias T = [Game]
 
     private let networking: Networking
-    private var nextPage: String = ""
+    private var nextPage: String?
 
     init(networking: Networking = NativeNetworking()) {
         self.networking = networking
@@ -35,7 +35,7 @@ final class GameListService: GameListServing {
     }
 
     func fetchMore(_ completion: @escaping (Result<[Game], Error>) -> Void) {
-        networking.run(route: GameListRoute.dynamic(nextPage)) { (result: Result<GameList, Error>) in
+        networking.run(route: GameListRoute.dynamic(nextPage ?? "")) { (result: Result<GameList, Error>) in
             switch result {
             case .success(let gameList):
                 self.nextPage = gameList.next

@@ -16,11 +16,18 @@ final class GamesPresenter: GamesPresenterProtocol {
 
     private let interactor: GamesInteractorProtocol
     private let router: GamesRouterProtocol
+    private let factory: GameCellFactoring
 
-    init(_ view: GamesViewProtocol, interactor: GamesInteractorProtocol, router: GamesRouterProtocol) {
+    init(
+        _ view: GamesViewProtocol,
+        interactor: GamesInteractorProtocol,
+        router: GamesRouterProtocol,
+        factory: GameCellFactoring
+    ) {
         self.view = view
         self.interactor = interactor
         self.router = router
+        self.factory = factory
         self.interactor.delegate = self
     }
 
@@ -43,7 +50,10 @@ extension GamesPresenter: GamesInteractorDelegate {
     func handleOutput(_ output: GamesInteractorOutput) {
         switch output {
         case .fetch(let games):
-            print(games)
+            viewModels = factory.games(from: games)
+            DispatchQueue.main.async {
+                self.view.handleOutput(.reloadData)
+            }
         case .fetchMore(let games):
             print(games)
         case .show(let error):
