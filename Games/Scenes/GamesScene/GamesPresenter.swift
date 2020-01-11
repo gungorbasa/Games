@@ -59,6 +59,10 @@ final class GamesPresenter: GamesPresenterProtocol {
         state = .list
         interactor.fetchGames()
     }
+
+    func onDidSelectRow() {
+        router.navigate(to: .details)
+    }
 }
 
 extension GamesPresenter: GamesInteractorDelegate {

@@ -32,6 +32,7 @@ private extension GamesViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.prefetchDataSource = self
+        tableView.delegate = self
         tableView.register(cellType: GamesTableViewCell.self)
     }
 
@@ -80,6 +81,12 @@ extension GamesViewController: UITableViewDataSourcePrefetching {
         if indexPaths.last?.row ?? 0 > threshold || indexPaths.first?.row ?? 0 > threshold {
             presenter.onPrefetchRows()
         }
+    }
+}
+
+extension GamesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.onDidSelectRow()
     }
 }
 

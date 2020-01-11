@@ -38,6 +38,7 @@ protocol GamesPresenterProtocol: class {
     func onPrefetchRows()
     func onSearchBar(textDidChange searchText: String)
     func onSearchBarCancelButtonClicked()
+    func onDidSelectRow()
 }
 
 enum GamesPresenterOutput: Equatable {
@@ -53,7 +54,7 @@ protocol GamesViewProtocol: class {
 
 // MARK: - Router
 enum GamesRoute: Equatable {
-
+    case details
 }
 
 protocol GamesRouterProtocol: class {

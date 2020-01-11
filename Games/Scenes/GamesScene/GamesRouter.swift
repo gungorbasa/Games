@@ -17,6 +17,11 @@ final class GamesRouter: GamesRouterProtocol {
     }
 
     func navigate(to route: GamesRoute) {
-
+        let navigationController = view.tabBarController?.navigationController
+        switch route {
+        case .details:
+            let viewController = GameDetailsBuilder.make()
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
