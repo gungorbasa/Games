@@ -9,14 +9,23 @@
 import UIKit
 
 extension UIImageView {
+
     func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
+        let size = bounds.size
+        let options: [CFString: Any] = [
+            kCGImageSourceCreateThumbnailFromImageIfAbsent: true,
+            kCGImageSourceCreateThumbnailWithTransform: true,
+            kCGImageSourceShouldCacheImmediately: true,
+            kCGImageSourceThumbnailMaxPixelSize: max(size.width, size.height)
+        ]
+        DispatchQueue.global(qos: .userInitiated).async {
+            guard let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil),
+                let cgImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary) else {
+                    return
+            }
+
+            DispatchQueue.main.async {
+                self.image = UIImage(cgImage: cgImage)
             }
         }
     }
