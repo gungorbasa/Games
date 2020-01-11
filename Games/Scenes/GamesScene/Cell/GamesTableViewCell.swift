@@ -15,10 +15,13 @@ final class GamesTableViewCell: UITableViewCell, ReusableCell, NibLoadable {
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var genreLabel: UILabel!
 
+    private var workItem: DispatchWorkItem?
+
     override func prepareForReuse() {
         super.prepareForReuse()
-        // Also, need to cancel image download request as well
         gameImageView.image = nil
+        workItem?.cancel()
+        workItem = nil
     }
 
     func update(_ viewModel: Any?) {
@@ -34,11 +37,18 @@ final class GamesTableViewCell: UITableViewCell, ReusableCell, NibLoadable {
             metacriticLabel.isHidden = true
             scoreLabel.isHidden = true
         }
-        guard let url = URL(string: viewModel.imageUrl) else { return }
-        // For now I am just downloading the image
-        // Reusing tableviewcell's need to be considered
-        // so that we won't have weird behavior of imageview
-        // need cahcing as well
-        gameImageView.load(url: url)
+        setImage(url: viewModel.imageUrl)
+    }
+
+    private func setImage(url: String) {
+        let size = bounds.size
+        let workItem = DispatchWorkItem(qos: .userInitiated, block: {
+            let image = ImageDownloader.shared.download(from: url, size: size)
+            DispatchQueue.main.async {
+                self.gameImageView.image = image
+            }
+        })
+        self.workItem = workItem
+        DispatchQueue.global(qos: .userInitiated).async(execute: workItem)
     }
 }
