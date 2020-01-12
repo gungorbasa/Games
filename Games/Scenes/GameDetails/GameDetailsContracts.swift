@@ -25,7 +25,10 @@ protocol GameDetailsInteractorDelegate: class {
 
 // MARK: - Presenter
 protocol GameDetailsPresenterProtocol: class {
-
+    
+    func onViewDidLoad()
+    func onViewWillAppear()
+    func onViewWillDisappear()
 }
 
 enum GameDetailsPresenterOutput: Equatable {
@@ -35,6 +38,8 @@ enum GameDetailsPresenterOutput: Equatable {
 // MARK: - View
 protocol GameDetailsViewProtocol: class {
 
+    func setRightBarButton(title: String, target: Any?, selector: Selector)
+    func removeRightBarButtonItem()
     func handleOutput(_ output: GameDetailsPresenterOutput)
 }
 

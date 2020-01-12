@@ -33,4 +33,18 @@ enum Localization {
 
         }
     }
+
+    enum GameDetails {
+        case favorite
+        case favorited
+
+        var translation: String {
+            switch self {
+            case .favorite:
+                return "Favorite"
+            case .favorited:
+                return "Favorited"
+            }
+        }
+    }
 }

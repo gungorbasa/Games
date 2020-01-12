@@ -14,11 +14,30 @@ final class GameDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        presenter.onViewDidLoad()
     }
 
-    private func setup() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.onViewWillAppear()
+    }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        presenter.onViewWillDisappear()
+        super.viewWillDisappear(animated)
+    }
+
+    func setRightBarButton(title: String, target: Any?, selector: Selector) {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: title,
+            style: .plain,
+            target: self,
+            action: selector
+        )
+    }
+
+    func removeRightBarButtonItem() {
+        navigationItem.rightBarButtonItem = nil
     }
 }
 
