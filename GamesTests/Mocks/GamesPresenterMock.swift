@@ -11,21 +11,30 @@ import Foundation
 @testable import Games
 
 final class GamesPresenterMock: GamesPresenterProtocol {
+
     var viewModels: [ReusableCellViewModel] = []
 
     var viewDidLoadIsCalled = false
     var fetchMoreGamesIsCalled = false
     var searchIsCalled = false
 
-    func viewDidLoad() {
-        viewDidLoadIsCalled = true
+    func onViewDidLoad() {
+
     }
 
-    func fetchMoreGames() {
-        fetchMoreGamesIsCalled = true
+    func onPrefetchRows() {
+
     }
 
-    func searchBar(textDidChange searchText: String) {
-        searchIsCalled = true
+    func onSearchBar(textDidChange searchText: String) {
+
+    }
+
+    func onSearchBarCancelButtonClicked() {
+
+    }
+
+    func onDidSelectRow() {
+        
     }
 }
