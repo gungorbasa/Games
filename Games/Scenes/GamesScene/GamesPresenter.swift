@@ -16,6 +16,8 @@ final class GamesPresenter: GamesPresenterProtocol {
 
     var viewModels: [ReusableCellViewModel] = []
 
+    private var games: [Game] = []
+
     private unowned let view: GamesViewProtocol
 
     private let interactor: GamesInteractorProtocol
@@ -60,8 +62,8 @@ final class GamesPresenter: GamesPresenterProtocol {
         interactor.fetchGames()
     }
 
-    func onDidSelectRow() {
-        router.navigate(to: .details)
+    func onDidSelectRow(at: IndexPath) {
+        router.navigate(to: .details(games[at.row]))
     }
 }
 
@@ -71,6 +73,7 @@ extension GamesPresenter: GamesInteractorDelegate {
         switch output {
         case .fetch(let games):
             DispatchQueue.main.async {
+                self.games = games
                 self.viewModels = self.factory.games(from: games)
                 self.view.handleOutput(.reloadData)
             }
@@ -81,6 +84,7 @@ extension GamesPresenter: GamesInteractorDelegate {
             }
         case .search(let games):
             DispatchQueue.main.async {
+                self.games.append(contentsOf: games)
                 self.viewModels = self.factory.games(from: games)
                 self.view.handleOutput(.reloadData)
             }

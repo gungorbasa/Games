@@ -86,7 +86,7 @@ extension GamesViewController: UITableViewDataSourcePrefetching {
 
 extension GamesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.onDidSelectRow()
+        presenter.onDidSelectRow(at: indexPath)
     }
 }
 
