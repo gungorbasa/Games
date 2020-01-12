@@ -29,7 +29,7 @@ final class ImageDownloader {
             kCGImageSourceThumbnailMaxPixelSize: max(size.width, size.height)
         ]
         guard let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil),
-            let cgImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary) else {
+            let cgImage = CGImageSourceCreateImageAtIndex(imageSource, 0, options as CFDictionary) else {
                 return nil
         }
         let image = UIImage(cgImage: cgImage)

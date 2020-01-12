@@ -10,9 +10,15 @@ import Foundation
 
 protocol GameDetailsFactoring {
 
+    func headerView(from details: GameDetails) -> GameDetailsHeaderViewModel
+    func cell(from details: GameDetails) -> [ReusableCellViewModel]
 }
 
 struct GameDetailsFactory: GameDetailsFactoring {
+    func headerView(from details: GameDetails) -> GameDetailsHeaderViewModel {
+        return GameDetailsHeaderViewModel(url: details.background_image, title: details.name)
+    }
+
     func cell(from details: GameDetails) -> [ReusableCellViewModel] {
         var viewModels: [ReusableCellViewModel] = [
             detailsCell(details.name, description: details.description_raw ?? "")

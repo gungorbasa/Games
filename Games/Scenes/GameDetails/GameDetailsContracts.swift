@@ -31,6 +31,7 @@ protocol GameDetailsInteractorDelegate: class {
 // MARK: - Presenter
 protocol GameDetailsPresenterProtocol: class {
 
+    var viewModels: [ReusableCellViewModel] { get }
     var game: Game! { get set }
 
     func onViewDidLoad()
@@ -40,6 +41,7 @@ protocol GameDetailsPresenterProtocol: class {
 
 enum GameDetailsPresenterOutput: Equatable {
     case reload
+    case setHeader(GameDetailsHeaderViewModel)
     case showMessage(String)
 }
 

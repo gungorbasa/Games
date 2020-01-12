@@ -32,8 +32,8 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Deo-iC-L9s">
-                    <rect key="frame" x="16" y="75" width="378" height="1"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <rect key="frame" x="16" y="75" width="398" height="1"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="5zs-9e-VM2"/>
                     </constraints>
@@ -45,12 +45,16 @@
                 <constraint firstItem="Deo-iC-L9s" firstAttribute="top" secondItem="HZp-zE-1pt" secondAttribute="bottom" constant="16" id="Iqt-9n-8ap"/>
                 <constraint firstItem="HZp-zE-1pt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="Kis-5n-o4M"/>
                 <constraint firstItem="Deo-iC-L9s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="S8C-AP-LNw"/>
-                <constraint firstAttribute="trailing" secondItem="Deo-iC-L9s" secondAttribute="trailing" constant="20" symbolic="YES" id="oSi-IB-Shb"/>
+                <constraint firstAttribute="trailing" secondItem="Deo-iC-L9s" secondAttribute="trailing" id="oSi-IB-Shb"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Deo-iC-L9s" secondAttribute="bottom" id="tCg-Kg-bt8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HZp-zE-1pt" secondAttribute="trailing" constant="16" id="zOy-R8-VET"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="detailsLabel" destination="Bfv-Is-THI" id="ntu-GO-XwG"/>
+                <outlet property="titleLabel" destination="DtY-Vi-GHC" id="3fZ-mq-gzF"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="-148.66071428571428"/>
         </view>
     </objects>

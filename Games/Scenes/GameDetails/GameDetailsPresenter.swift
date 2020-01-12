@@ -15,7 +15,9 @@ final class GameDetailsPresenter: GameDetailsPresenterProtocol {
     private let interactor: GameDetailsInteractorProtocol
     private let router: GameDetailsRouterProtocol
     private var isFavorited: Bool = false
-    private var viewModels: [ReusableCellViewModel] = []
+    private let factory: GameDetailsFactory = GameDetailsFactory()
+
+    var viewModels: [ReusableCellViewModel] = []
 
     var game: Game!
 
@@ -59,13 +61,15 @@ final class GameDetailsPresenter: GameDetailsPresenterProtocol {
 extension GameDetailsPresenter: GameDetailsInteractorDelegate {
 
     func handleOutput(_ output: GameDetailsInteractorOutput) {
-        switch output {
-        case .details(let details):
-            
-            view.handleOutput(.reload)
-            print(details)
-        case .error(let error):
-            view.handleOutput(.showMessage(error.localizedDescription))
+        DispatchQueue.main.async {
+            switch output {
+            case .details(let details):
+                self.viewModels = self.factory.cell(from: details)
+                self.view.handleOutput(.setHeader(self.factory.headerView(from: details)))
+                self.view.handleOutput(.reload)
+            case .error(let error):
+                self.view.handleOutput(.showMessage(error.localizedDescription))
+            }
         }
     }
 }
