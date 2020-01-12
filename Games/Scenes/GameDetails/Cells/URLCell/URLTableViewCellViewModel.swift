@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct URLTableViewCellViewModel: ReusableCellViewModel {
-    let cellType: ReusableCell.Type = URLTableViewCell.self
+struct URLTableViewCellViewModel: ReusableCellViewModel, Equatable {
+    var cellType: ReusableCell.Type { return URLTableViewCell.self }
 
     let title: String
 }

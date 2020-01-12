@@ -15,6 +15,9 @@ final class GameDetailsPresenter: GameDetailsPresenterProtocol {
     private let interactor: GameDetailsInteractorProtocol
     private let router: GameDetailsRouterProtocol
     private var isFavorited: Bool = false
+    private var viewModels: [ReusableCellViewModel] = []
+
+    var game: Game!
 
     init(_ view: GameDetailsViewProtocol, interactor: GameDetailsInteractorProtocol, router: GameDetailsRouterProtocol) {
         self.view = view
@@ -24,7 +27,7 @@ final class GameDetailsPresenter: GameDetailsPresenterProtocol {
     }
 
     func onViewDidLoad() {
-
+        interactor.gameDetails(for: "\(game.id)")
     }
 
     func onViewWillAppear() {
@@ -45,17 +48,24 @@ final class GameDetailsPresenter: GameDetailsPresenterProtocol {
     }
 
     @objc func favor() {
-
+        interactor.favor(game)
     }
 
     @objc func unfavor() {
-
+        interactor.unfavor(game)
     }
 }
 
 extension GameDetailsPresenter: GameDetailsInteractorDelegate {
 
     func handleOutput(_ output: GameDetailsInteractorOutput) {
-
+        switch output {
+        case .details(let details):
+            
+            view.handleOutput(.reload)
+            print(details)
+        case .error(let error):
+            view.handleOutput(.showMessage(error.localizedDescription))
+        }
     }
 }

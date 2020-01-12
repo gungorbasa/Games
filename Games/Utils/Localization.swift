@@ -37,6 +37,8 @@ enum Localization {
     enum GameDetails {
         case favorite
         case favorited
+        case visitReddit
+        case visitWebsite
 
         var translation: String {
             switch self {
@@ -44,6 +46,10 @@ enum Localization {
                 return "Favorite"
             case .favorited:
                 return "Favorited"
+            case .visitReddit:
+                return "Visit Reddit"
+            case .visitWebsite:
+                return "Visit Website"
             }
         }
     }

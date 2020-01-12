@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct GameDetailsHeaderViewModel: ReusableCellViewModel {
-    let cellType: ReusableCell.Type = GameDetailsHeaderView.self
+struct GameDetailsHeaderViewModel: ReusableCellViewModel, Equatable {
+    var cellType: ReusableCell.Type { return GameDetailsHeaderView.self }
 
     let url: String?
     let title: String

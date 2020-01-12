@@ -16,7 +16,7 @@ protocol Database {
     func get<T: Codable>(_ key: String) -> T?
 }
 
-final class UserDefaultsDatabase {
+final class UserDefaultsDatabase: Database {
 
     private let defaults = UserDefaults.standard
 
