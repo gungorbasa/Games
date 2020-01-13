@@ -12,7 +12,9 @@ final class GameDetailsBuilder {
 
     static func make() -> GameDetailsViewController {
         let storyboard = UIStoryboard(name: "GameDetails", bundle: nil)
-        let view = storyboard.instantiateViewController(withIdentifier: "GameDetailsViewController") as! GameDetailsViewController
+        let view = storyboard.instantiateViewController(
+            withIdentifier: "GameDetailsViewController"
+        ) as! GameDetailsViewController
         // TODO: Injections
         let router = GameDetailsRouter(view)
         let service = GameDetailsService()

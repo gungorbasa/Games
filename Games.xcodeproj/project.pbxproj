@@ -52,8 +52,6 @@
 		239E99FA23C9C93B003BDA1B /* GameCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F923C9C93B003BDA1B /* GameCellFactory.swift */; };
 		239E99FC23C9D31C003BDA1B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99FB23C9D31C003BDA1B /* UIImageView.swift */; };
 		239E99FE23C9E01B003BDA1B /* GameCellFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99FD23C9E01B003BDA1B /* GameCellFactoryTest.swift */; };
-		239E9A0123CA0F80003BDA1B /* GamesPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A0023CA0F80003BDA1B /* GamesPresenterMock.swift */; };
-		239E9A0323CA0FD4003BDA1B /* GamesInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A0223CA0FD4003BDA1B /* GamesInteractorMock.swift */; };
 		239E9A0523CA12FC003BDA1B /* GameSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A0423CA12FC003BDA1B /* GameSearchService.swift */; };
 		239E9A0723CA7455003BDA1B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A0623CA7455003BDA1B /* ImageCache.swift */; };
 		239E9A0923CA75D4003BDA1B /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A0823CA75D4003BDA1B /* ImageDownloader.swift */; };
@@ -78,6 +76,8 @@
 		239E9A3D23CB2F46003BDA1B /* GameDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A3C23CB2F46003BDA1B /* GameDetailsService.swift */; };
 		239E9A3F23CB3F94003BDA1B /* GameDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A3E23CB3F94003BDA1B /* GameDetailsFactory.swift */; };
 		239E9A4123CB428F003BDA1B /* GameDetailsFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4023CB428F003BDA1B /* GameDetailsFactoryTest.swift */; };
+		239E9A4523CD27B2003BDA1B /* UserDefaultDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4423CD27B2003BDA1B /* UserDefaultDatabaseTests.swift */; };
+		239E9A4723CD2BAB003BDA1B /* GameListServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4623CD2BAB003BDA1B /* GameListServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,8 +140,6 @@
 		239E99F923C9C93B003BDA1B /* GameCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellFactory.swift; sourceTree = "<group>"; };
 		239E99FB23C9D31C003BDA1B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		239E99FD23C9E01B003BDA1B /* GameCellFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellFactoryTest.swift; sourceTree = "<group>"; };
-		239E9A0023CA0F80003BDA1B /* GamesPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesPresenterMock.swift; sourceTree = "<group>"; };
-		239E9A0223CA0FD4003BDA1B /* GamesInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesInteractorMock.swift; sourceTree = "<group>"; };
 		239E9A0423CA12FC003BDA1B /* GameSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSearchService.swift; sourceTree = "<group>"; };
 		239E9A0623CA7455003BDA1B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		239E9A0823CA75D4003BDA1B /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
@@ -166,6 +164,8 @@
 		239E9A3C23CB2F46003BDA1B /* GameDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsService.swift; sourceTree = "<group>"; };
 		239E9A3E23CB3F94003BDA1B /* GameDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsFactory.swift; sourceTree = "<group>"; };
 		239E9A4023CB428F003BDA1B /* GameDetailsFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsFactoryTest.swift; sourceTree = "<group>"; };
+		239E9A4423CD27B2003BDA1B /* UserDefaultDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultDatabaseTests.swift; sourceTree = "<group>"; };
+		239E9A4623CD2BAB003BDA1B /* GameListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,7 +231,8 @@
 			children = (
 				239E99FD23C9E01B003BDA1B /* GameCellFactoryTest.swift */,
 				239E9A4023CB428F003BDA1B /* GameDetailsFactoryTest.swift */,
-				239E99FF23CA0F6C003BDA1B /* Mocks */,
+				239E9A4423CD27B2003BDA1B /* UserDefaultDatabaseTests.swift */,
+				239E9A4623CD2BAB003BDA1B /* GameListServiceTest.swift */,
 				239E995923C8F4E7003BDA1B /* GamesTests.swift */,
 				239E995B23C8F4E7003BDA1B /* Info.plist */,
 			);
@@ -360,15 +361,6 @@
 				239E99F323C9450E003BDA1B /* GameRoute.swift */,
 			);
 			path = Routes;
-			sourceTree = "<group>";
-		};
-		239E99FF23CA0F6C003BDA1B /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				239E9A0023CA0F80003BDA1B /* GamesPresenterMock.swift */,
-				239E9A0223CA0FD4003BDA1B /* GamesInteractorMock.swift */,
-			);
-			path = Mocks;
 			sourceTree = "<group>";
 		};
 		239E9A0A23CA7DC0003BDA1B /* GameDetails */ = {
@@ -609,8 +601,8 @@
 				239E99FE23C9E01B003BDA1B /* GameCellFactoryTest.swift in Sources */,
 				239E9A4123CB428F003BDA1B /* GameDetailsFactoryTest.swift in Sources */,
 				239E995A23C8F4E7003BDA1B /* GamesTests.swift in Sources */,
-				239E9A0323CA0FD4003BDA1B /* GamesInteractorMock.swift in Sources */,
-				239E9A0123CA0F80003BDA1B /* GamesPresenterMock.swift in Sources */,
+				239E9A4723CD2BAB003BDA1B /* GameListServiceTest.swift in Sources */,
+				239E9A4523CD27B2003BDA1B /* UserDefaultDatabaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
