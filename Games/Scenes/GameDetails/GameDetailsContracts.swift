@@ -16,6 +16,7 @@ protocol GameDetailsInteractorProtocol: class {
     func gameDetails(for id: String)
     func favor(_ game: Game)
     func unfavor(_ game: Game)
+    func isFavorited(_ game: Game) -> Bool
 }
 
 enum GameDetailsInteractorOutput {
@@ -37,6 +38,9 @@ protocol GameDetailsPresenterProtocol: class {
     func onViewDidLoad()
     func onViewWillAppear()
     func onViewWillDisappear()
+    func onDidSelectRow(_ indexPath: IndexPath)
+    func favor()
+    func unfavor()
 }
 
 enum GameDetailsPresenterOutput: Equatable {
@@ -55,7 +59,7 @@ protocol GameDetailsViewProtocol: class {
 
 // MARK: - Router
 enum GameDetailsRoute: Equatable {
-
+    case safari(String)
 }
 
 protocol GameDetailsRouterProtocol: class {

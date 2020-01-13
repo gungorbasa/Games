@@ -18,7 +18,6 @@ final class GameDetailsBuilder {
         let service = GameDetailsService()
         let database = UserDefaultsDatabase()
         let interactor = GameDetailsInteractor(service, database: database)
-//        let interactor = GameDetailsInteractor(service)
         let presenter = GameDetailsPresenter(view, interactor: interactor, router: router)
         view.presenter = presenter
         return view

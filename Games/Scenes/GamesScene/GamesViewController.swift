@@ -20,12 +20,17 @@ final class GamesViewController: UIViewController {
         presenter.onViewDidLoad()
         setup()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.onViewWillAppear()
+        addSearchControllerIfNeeded()
+    }
 }
 
 private extension GamesViewController {
     
     func setup() {
-        addSearchController()
         setupTableView()
     }
 
@@ -36,10 +41,12 @@ private extension GamesViewController {
         tableView.register(cellType: GamesTableViewCell.self)
     }
 
-    func addSearchController() {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.delegate = self
-        tabBarController?.navigationItem.searchController = searchController
+    func addSearchControllerIfNeeded() {
+        if tabBarController?.navigationItem.searchController == nil {
+            let searchController = UISearchController(searchResultsController: nil)
+            searchController.searchBar.delegate = self
+            tabBarController?.navigationItem.searchController = searchController
+        }
     }
 
     func setNavigationBar(_ title: String) {

@@ -17,6 +17,12 @@ final class FavoritesRouter: FavoritesRouterProtocol {
     }
 
     func navigate(to route: FavoritesRoute) {
-
+        let navigationController = view.tabBarController?.navigationController
+        switch route {
+        case .details(let game):
+            let viewController = GameDetailsBuilder.make()
+            viewController.presenter.game = game
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }

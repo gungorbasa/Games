@@ -35,6 +35,7 @@ protocol GamesPresenterProtocol: class {
     var viewModels: [ReusableCellViewModel] { get }
     
     func onViewDidLoad()
+    func onViewWillAppear()
     func onPrefetchRows()
     func onSearchBar(textDidChange searchText: String)
     func onSearchBarCancelButtonClicked()

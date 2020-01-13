@@ -24,11 +24,11 @@ struct GameDetailsFactory: GameDetailsFactoring {
             detailsCell(details.name, description: details.description_raw ?? "")
         ]
 
-        if details.reddit_url != nil {
-            viewModels.append(urlCell(Localization.GameDetails.visitReddit.translation))
+        if let reddit = details.reddit_url {
+            viewModels.append(urlCell(Localization.GameDetails.visitReddit.translation, url: reddit))
         }
-        if details.website != nil {
-            viewModels.append(urlCell(Localization.GameDetails.visitWebsite.translation))
+        if let website = details.website {
+            viewModels.append(urlCell(Localization.GameDetails.visitWebsite.translation, url: website))
         }
 
         return viewModels
@@ -40,7 +40,7 @@ private extension GameDetailsFactory {
         return DetailsTableViewCellViewModel(title: title, description: description)
     }
 
-    func urlCell(_ title: String) -> ReusableCellViewModel {
-        return URLTableViewCellViewModel(title: title)
+    func urlCell(_ title: String, url: String) -> ReusableCellViewModel {
+        return URLTableViewCellViewModel(title: title, url: url)
     }
 }

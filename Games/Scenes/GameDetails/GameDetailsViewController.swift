@@ -38,7 +38,7 @@ final class GameDetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: title,
             style: .plain,
-            target: self,
+            target: target,
             action: selector
         )
     }
@@ -47,18 +47,16 @@ final class GameDetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = nil
     }
 
-    func setHeader(from details: DetailsTableViewCellViewModel) {
-
-    }
-
     private func setupTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(cellType: DetailsTableViewCell.self)
         tableView.register(cellType: URLTableViewCell.self)
     }
 }
 
 extension GameDetailsViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -73,6 +71,13 @@ extension GameDetailsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellOf(type: viewModel.cellType, for: indexPath)
         cell.update(viewModel)
         return cell as? UITableViewCell ?? UITableViewCell()
+    }
+}
+
+extension GameDetailsViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.onDidSelectRow(indexPath)
     }
 }
 

@@ -12,4 +12,5 @@ struct URLTableViewCellViewModel: ReusableCellViewModel, Equatable {
     var cellType: ReusableCell.Type { return URLTableViewCell.self }
 
     let title: String
+    let url: String
 }

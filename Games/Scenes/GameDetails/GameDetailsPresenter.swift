@@ -14,7 +14,9 @@ final class GameDetailsPresenter: GameDetailsPresenterProtocol {
 
     private let interactor: GameDetailsInteractorProtocol
     private let router: GameDetailsRouterProtocol
-    private var isFavorited: Bool = false
+    private var isFavorited: Bool {
+        return self.interactor.isFavorited(game)
+    }
     private let factory: GameDetailsFactory = GameDetailsFactory()
 
     var viewModels: [ReusableCellViewModel] = []
@@ -33,10 +35,14 @@ final class GameDetailsPresenter: GameDetailsPresenterProtocol {
     }
 
     func onViewWillAppear() {
+        setFavoriteTitle()
+    }
+
+    private func setFavoriteTitle() {
         let title = isFavorited ?
             Localization.GameDetails.favorited.translation :
             Localization.GameDetails.favorite.translation
-        let selector = isFavorited ? #selector(unfavor) : #selector(favor)
+        let selector = isFavorited ? #selector(GameDetailsPresenter.unfavor) : #selector(GameDetailsPresenter.favor)
 
         view.setRightBarButton(
             title: title,
@@ -49,12 +55,21 @@ final class GameDetailsPresenter: GameDetailsPresenterProtocol {
         view.removeRightBarButtonItem()
     }
 
+    func onDidSelectRow(_ indexPath: IndexPath) {
+        guard viewModels.count > indexPath.row else { return }
+        if let urlVM = viewModels[indexPath.row] as? URLTableViewCellViewModel {
+            router.navigate(to: .safari(urlVM.url))
+        }
+    }
+
     @objc func favor() {
         interactor.favor(game)
+        setFavoriteTitle()
     }
 
     @objc func unfavor() {
         interactor.unfavor(game)
+        setFavoriteTitle()
     }
 }
 

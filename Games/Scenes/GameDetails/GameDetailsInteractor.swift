@@ -44,4 +44,9 @@ final class GameDetailsInteractor: GameDetailsInteractorProtocol {
         database.remove(favoritesKey)
         database.add(favoritesKey, value: removed)
     }
+
+    func isFavorited(_ game: Game) -> Bool {
+        let favorites: [Game] = database.get(favoritesKey) ?? []
+        return favorites.contains(game)
+    }
 }

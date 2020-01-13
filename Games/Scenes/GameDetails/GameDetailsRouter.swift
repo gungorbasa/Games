@@ -17,6 +17,11 @@ final class GameDetailsRouter: GameDetailsRouterProtocol {
     }
 
     func navigate(to route: GameDetailsRoute) {
-
+        switch route {
+        case .safari(let urlString):
+            if let url = URL(string: urlString) {
+                UIApplication.shared.open(url)
+            }
+        }
     }
 }

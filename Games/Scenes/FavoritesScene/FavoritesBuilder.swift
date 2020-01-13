@@ -15,11 +15,8 @@ final class FavoritesBuilder {
         let view = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController
         // TODO: Injections
         let router = FavoritesRouter(view)
-//        let networkWorker = NetworkWorker(app.networking)
-//        let service = RestaurantListService(networkWorker, database: DbWorker(Database()))
-//        //        MovieListInteractor(app.service)
-        let interactor = FavoritesInteractor()
-//        let interactor = FavoritesInteractor(service)
+        let database = UserDefaultsDatabase()
+        let interactor = FavoritesInteractor(database: database)
         let presenter = FavoritesPresenter(view, interactor: interactor, router: router)
         view.presenter = presenter
         return view

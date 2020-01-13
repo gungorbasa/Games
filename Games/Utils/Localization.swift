@@ -53,4 +53,12 @@ enum Localization {
             }
         }
     }
+
+    enum Favorites {
+        case favorites
+
+        var translation: String {
+            return "Favorites"
+        }
+    }
 }

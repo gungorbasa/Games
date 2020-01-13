@@ -39,8 +39,11 @@ final class GamesPresenter: GamesPresenterProtocol {
     }
 
     func onViewDidLoad() {
-        view.handleOutput(.navigationBar(title: Localization.GamesScreen.title.translation))
         interactor.fetchGames()
+    }
+
+    func onViewWillAppear() {
+        view.handleOutput(.navigationBar(title: Localization.GamesScreen.title.translation))
     }
 
     func onPrefetchRows() {
