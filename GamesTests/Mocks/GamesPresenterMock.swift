@@ -11,15 +11,8 @@ import Foundation
 @testable import Games
 
 final class GamesPresenterMock: GamesPresenterProtocol {
-
-    var viewModels: [ReusableCellViewModel] = []
-
-    var viewDidLoadIsCalled = false
-    var fetchMoreGamesIsCalled = false
-    var searchIsCalled = false
-
     func onViewDidLoad() {
-
+        
     }
 
     func onPrefetchRows() {
@@ -34,7 +27,18 @@ final class GamesPresenterMock: GamesPresenterProtocol {
 
     }
 
-    func onDidSelectRow() {
+    func onViewWillAppear() {
+
+    }
+
+    func onDidSelectRow(at: IndexPath) {
         
     }
+
+
+    var viewModels: [ReusableCellViewModel] = []
+
+    var viewDidLoadIsCalled = false
+    var fetchMoreGamesIsCalled = false
+    var searchIsCalled = false
 }

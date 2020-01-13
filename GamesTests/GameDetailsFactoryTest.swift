@@ -16,8 +16,14 @@ final class GameDetailsCellFactory: XCTestCase {
         title: "GTA V",
         description: "Description"
     )
-    private let expectedWebsite = URLTableViewCellViewModel(title: Localization.GameDetails.visitWebsite.translation)
-    private let expectedReddit = URLTableViewCellViewModel(title: Localization.GameDetails.visitReddit.translation)
+    private let expectedWebsite = URLTableViewCellViewModel(
+        title: Localization.GameDetails.visitWebsite.translation,
+        url: "website"
+    )
+    private let expectedReddit = URLTableViewCellViewModel(
+        title: Localization.GameDetails.visitReddit.translation,
+        url: "reddit"
+    )
 
     func testConvertViewModelsWithURLS() {
         let details = GameDetails(
@@ -57,7 +63,7 @@ final class GameDetailsCellFactory: XCTestCase {
             description_raw: "Description",
             background_image: "image",
             website: nil,
-            reddit_url: "Reddit"
+            reddit_url: "reddit"
         )
         let viewModels = factory.cell(from: details)
         XCTAssert(viewModels.count == 2)
