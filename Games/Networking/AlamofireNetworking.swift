@@ -10,8 +10,14 @@ import Foundation
 import Alamofire
 
 final class AlamofireNetwork: Networking {
+  private let session: Session
+
+  init(session: Session = Session()) {
+    self.session = session
+  }
+
   func run<T>(route: Routing, completion: @escaping (Result<T, Error>) -> ()) where T : Decodable, T : Encodable {
-    let request = AF.request(
+    let request = session.request(
       route.host,
       method: convertMethod(method: route.method),
       parameters: route.parameters,
@@ -29,7 +35,7 @@ final class AlamofireNetwork: Networking {
   }
 
   func cancel() {
-
+    session.cancelAllRequests()
   }
 
   private func convertMethod(method: HTTPMethod) -> Alamofire.HTTPMethod {
