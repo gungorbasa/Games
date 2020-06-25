@@ -26,7 +26,7 @@ final class GamesInteractor: GamesInteractorProtocol {
       gameSearchService.fetch(text) { [weak self] result in
         switch result {
         case .success(let games):
-          self?.delegate?.handleOutput(.fetch(games))
+          self?.delegate?.handleOutput(.search(games))
         case .failure(let error):
           self?.delegate?.handleOutput(.show(error))
         }

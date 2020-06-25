@@ -22,7 +22,7 @@ class GameListServiceTest: XCTestCase {
     )
     private lazy var gameList = GameList(next: "Next", results: [expectedGame])
 
-    func testSeviceSuccess() {
+    func testServiceSuccess() {
         networkingMock.result = .success(gameList)
         let service = GameListService(networking: networkingMock)
         let expectation = XCTestExpectation(description: "Success Expectation")
