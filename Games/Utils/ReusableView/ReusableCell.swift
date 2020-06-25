@@ -9,5 +9,5 @@
 import UIKit
 
 protocol ReusableCell: Reusable {
-    func update(_ viewModel: Any?)
+  func update(_ viewModel: Any?)
 }

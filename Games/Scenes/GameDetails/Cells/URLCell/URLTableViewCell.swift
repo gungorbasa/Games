@@ -9,11 +9,11 @@
 import UIKit
 
 final class URLTableViewCell: UITableViewCell, ReusableCell, NibLoadable {
-
-    @IBOutlet weak var urlLabel: UILabel!
-
-    func update(_ viewModel: Any?) {
-        guard let viewModel = viewModel as? URLTableViewCellViewModel else { return }
-        urlLabel.text = viewModel.title
-    }
+  
+  @IBOutlet weak var urlLabel: UILabel!
+  
+  func update(_ viewModel: Any?) {
+    guard let viewModel = viewModel as? URLTableViewCellViewModel else { return }
+    urlLabel.text = viewModel.title
+  }
 }

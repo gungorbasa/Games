@@ -9,10 +9,10 @@
 import Foundation
 
 struct GamesTableViewCellViewModel: ReusableCellViewModel, Equatable {
-    var cellType: ReusableCell.Type { return GamesTableViewCell.self }
-    
-    let imageUrl: String
-    let gameTitle: String
-    let gameScore: Int?
-    let gameGenres: String
+  var cellType: ReusableCell.Type { return GamesTableViewCell.self }
+  
+  let imageUrl: String
+  let gameTitle: String
+  let gameScore: Int?
+  let gameGenres: String
 }

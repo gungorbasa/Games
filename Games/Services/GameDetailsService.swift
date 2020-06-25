@@ -9,22 +9,22 @@
 import Foundation
 
 protocol GameDetailsServing {
-
-    func fetch(details id: String, completion: @escaping (Result<GameDetails, Error>) -> Void)
+  
+  func fetch(details id: String, completion: @escaping (Result<GameDetails, Error>) -> Void)
 }
 
 final class GameDetailsService: GameDetailsServing {
-
-    private let networking: Networking
-
-    init(_ networking: Networking = NativeNetworking()) {
-        self.networking = networking
+  
+  private let networking: Networking
+  
+  init(_ networking: Networking = NativeNetworking()) {
+    self.networking = networking
+  }
+  
+  func fetch(details id: String, completion: @escaping (Result<GameDetails, Error>) -> Void) {
+    networking.run(
+    route: GameRoute.details(id)) { (result: Result<GameDetails, Error>) in
+      completion(result)
     }
-
-    func fetch(details id: String, completion: @escaping (Result<GameDetails, Error>) -> Void) {
-        networking.run(
-        route: GameRoute.details(id)) { (result: Result<GameDetails, Error>) in
-            completion(result)
-        }
-    }
+  }
 }

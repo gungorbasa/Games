@@ -9,19 +9,19 @@
 import UIKit
 
 final class GameDetailsRouter: GameDetailsRouterProtocol {
-
-    unowned let view: UIViewController
-
-    init(_ view: UIViewController) {
-        self.view = view
+  
+  unowned let view: UIViewController
+  
+  init(_ view: UIViewController) {
+    self.view = view
+  }
+  
+  func navigate(to route: GameDetailsRoute) {
+    switch route {
+    case .safari(let urlString):
+      if let url = URL(string: urlString) {
+        UIApplication.shared.open(url)
+      }
     }
-
-    func navigate(to route: GameDetailsRoute) {
-        switch route {
-        case .safari(let urlString):
-            if let url = URL(string: urlString) {
-                UIApplication.shared.open(url)
-            }
-        }
-    }
+  }
 }

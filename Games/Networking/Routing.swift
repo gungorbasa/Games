@@ -9,15 +9,17 @@
 import Foundation
 
 protocol Routing {
-    var host: String { get }
-    var path: String { get }
-    var parameters: [String: Any] { get }
-    var method: HTTPMethod { get }
+  var host: String { get }
+  var path: String { get }
+  var headers: [String: String] { get }
+  var parameters: [String: Any] { get }
+  var body: [String: Any] { get }
+  var method: HTTPMethod { get }
 }
 
 enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case put = "PUT"
-    case delete = "DELETE"
+  case get = "GET"
+  case post = "POST"
+  case put = "PUT"
+  case delete = "DELETE"
 }

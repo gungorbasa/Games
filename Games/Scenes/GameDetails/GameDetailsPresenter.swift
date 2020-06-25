@@ -10,81 +10,87 @@ import Foundation
 
 final class GameDetailsPresenter: GameDetailsPresenterProtocol {
 
-    private unowned let view: GameDetailsViewProtocol
+  private unowned let view: GameDetailsViewProtocol
 
-    private let interactor: GameDetailsInteractorProtocol
-    private let router: GameDetailsRouterProtocol
-    private var isFavorited: Bool {
-        return self.interactor.isFavorited(game)
+  private let interactor: GameDetailsInteractorProtocol
+  private let router: GameDetailsRouterProtocol
+  private var isFavorited: Bool {
+    return self.interactor.isFavorited(game)
+  }
+  private let factory: GameDetailsFactoring
+
+  var viewModels: [ReusableCellViewModel] = []
+
+  var game: Game!
+
+  init(
+    _ view: GameDetailsViewProtocol,
+    interactor: GameDetailsInteractorProtocol,
+    router: GameDetailsRouterProtocol,
+    factory: GameDetailsFactoring = GameDetailsFactory()
+  ) {
+    self.view = view
+    self.interactor = interactor
+    self.router = router
+    self.factory = factory
+    self.interactor.delegate = self
+  }
+
+  func onViewDidLoad() {
+    interactor.gameDetails(for: "\(game.id)")
+  }
+
+  func onViewWillAppear() {
+    setFavoriteTitle()
+  }
+
+  private func setFavoriteTitle() {
+    let title = isFavorited ?
+      Localization.GameDetails.favorited.translation :
+      Localization.GameDetails.favorite.translation
+    let selector = isFavorited ? #selector(GameDetailsPresenter.unfavor) : #selector(GameDetailsPresenter.favor)
+
+    view.setRightBarButton(
+      title: title,
+      target: self,
+      selector: selector
+    )
+  }
+
+  func onViewWillDisappear() {
+    view.removeRightBarButtonItem()
+  }
+
+  func onDidSelectRow(_ indexPath: IndexPath) {
+    guard viewModels.count > indexPath.row else { return }
+    if let urlVM = viewModels[indexPath.row] as? URLTableViewCellViewModel {
+      router.navigate(to: .safari(urlVM.url))
     }
-    private let factory: GameDetailsFactory = GameDetailsFactory()
+  }
 
-    var viewModels: [ReusableCellViewModel] = []
+  @objc func favor() {
+    interactor.favor(game)
+    setFavoriteTitle()
+  }
 
-    var game: Game!
-
-    init(_ view: GameDetailsViewProtocol, interactor: GameDetailsInteractorProtocol, router: GameDetailsRouterProtocol) {
-        self.view = view
-        self.interactor = interactor
-        self.router = router
-        self.interactor.delegate = self
-    }
-
-    func onViewDidLoad() {
-        interactor.gameDetails(for: "\(game.id)")
-    }
-
-    func onViewWillAppear() {
-        setFavoriteTitle()
-    }
-
-    private func setFavoriteTitle() {
-        let title = isFavorited ?
-            Localization.GameDetails.favorited.translation :
-            Localization.GameDetails.favorite.translation
-        let selector = isFavorited ? #selector(GameDetailsPresenter.unfavor) : #selector(GameDetailsPresenter.favor)
-
-        view.setRightBarButton(
-            title: title,
-            target: self,
-            selector: selector
-        )
-    }
-
-    func onViewWillDisappear() {
-        view.removeRightBarButtonItem()
-    }
-
-    func onDidSelectRow(_ indexPath: IndexPath) {
-        guard viewModels.count > indexPath.row else { return }
-        if let urlVM = viewModels[indexPath.row] as? URLTableViewCellViewModel {
-            router.navigate(to: .safari(urlVM.url))
-        }
-    }
-
-    @objc func favor() {
-        interactor.favor(game)
-        setFavoriteTitle()
-    }
-
-    @objc func unfavor() {
-        interactor.unfavor(game)
-        setFavoriteTitle()
-    }
+  @objc func unfavor() {
+    interactor.unfavor(game)
+    setFavoriteTitle()
+  }
 }
 
 extension GameDetailsPresenter: GameDetailsInteractorDelegate {
 
-    func handleOutput(_ output: GameDetailsInteractorOutput) {
-        DispatchQueue.main.async {
-            switch output {
-            case .details(let details):
-                self.viewModels = self.factory.cell(from: details)
-                self.view.handleOutput(.setHeader(self.factory.headerView(from: details)))
-                self.view.handleOutput(.reload)
-            case .error(let error):
-                self.view.handleOutput(.showMessage(error.localizedDescription))
-            }
-        }
+  func handleOutput(_ output: GameDetailsInteractorOutput) {
+    DispatchQueue.main.async {
+      switch output {
+      case .details(let details):
+        self.viewModels = self.factory.cell(from: details)
+        self.view.handleOutput(.setHeader(self.factory.headerView(from: details)))
+        self.view.handleOutput(.reload)
+      case .error(let error):
+        self.view.handleOutput(.showMessage(error.localizedDescription))
+      }
     }
+  }
 }

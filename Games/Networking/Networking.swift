@@ -11,6 +11,6 @@ import Foundation
 import Foundation
 
 protocol Networking {
-    func run<T: Codable>(route: Routing, completion: @escaping (Result<T, Error>) -> ())
-    func cancel()
+  func run<T: Codable>(route: Routing, completion: @escaping (Result<T, Error>) -> ())
+  func cancel()
 }

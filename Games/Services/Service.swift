@@ -9,11 +9,11 @@
 import Foundation
 
 protocol Service {
-    associatedtype T: Codable
-
-    func fetch(_ completion: @escaping (Result<T, Error>) -> Void)
+  associatedtype T: Codable
+  
+  func fetch(_ completion: @escaping (Result<T, Error>) -> Void)
 }
 
 protocol PaginatableService: Service {
-    func fetchMore(_ completion: @escaping (Result<T, Error>) -> Void)
+  func fetchMore(_ completion: @escaping (Result<T, Error>) -> Void)
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 struct GameDetailsHeaderViewModel: ReusableCellViewModel, Equatable {
-    var cellType: ReusableCell.Type { return GameDetailsHeaderView.self }
-
-    let url: String?
-    let title: String
+  var cellType: ReusableCell.Type { return GameDetailsHeaderView.self }
+  
+  let url: String?
+  let title: String
 }

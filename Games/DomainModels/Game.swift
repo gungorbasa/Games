@@ -9,10 +9,11 @@
 import Foundation
 
 struct Game: Codable, Equatable {
-    let id: Int
-    let name: String
-    let released: String
-    let background_image: String
-    let metacritic: Int?
-    let genres: [Genre]
+  
+  let id: Int
+  let name: String
+  let released: String
+  let background_image: String
+  let metacritic: Int?
+  let genres: [Genre]
 }

@@ -10,19 +10,19 @@ import UIKit
 
 final class GamesRouter: GamesRouterProtocol {
 
-    unowned let view: UIViewController
+  unowned let view: UIViewController
 
-    init(_ view: UIViewController) {
-        self.view = view
-    }
+  init(_ view: UIViewController) {
+    self.view = view
+  }
 
-    func navigate(to route: GamesRoute) {
-        let navigationController = view.tabBarController?.navigationController
-        switch route {
-        case .details(let game):
-            let viewController = GameDetailsBuilder.make()
-            viewController.presenter.game = game
-            navigationController?.pushViewController(viewController, animated: true)
-        }
+  func navigate(to route: GamesRoute) {
+    let navigationController = view.tabBarController?.navigationController
+    switch route {
+    case .details(let game):
+      let viewController = GameDetailsBuilder.make()
+      viewController.presenter.game = game
+      navigationController?.pushViewController(viewController, animated: true)
     }
+  }
 }

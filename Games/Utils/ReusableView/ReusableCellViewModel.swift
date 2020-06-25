@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ReusableCellViewModel {
-    var cellType: ReusableCell.Type { get }
+  var cellType: ReusableCell.Type { get }
 }

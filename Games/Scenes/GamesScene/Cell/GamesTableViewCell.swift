@@ -7,48 +7,35 @@
 //
 
 import UIKit
+import Nuke
 
 final class GamesTableViewCell: UITableViewCell, ReusableCell, NibLoadable {
-    @IBOutlet private weak var gameImageView: UIImageView!
-    @IBOutlet private weak var gameTitleLabel: UILabel!
-    @IBOutlet private weak var metacriticLabel: UILabel!
-    @IBOutlet private weak var scoreLabel: UILabel!
-    @IBOutlet private weak var genreLabel: UILabel!
-
-    private var workItem: DispatchWorkItem?
-
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        gameImageView.image = nil
-        workItem?.cancel()
-        workItem = nil
+  @IBOutlet private weak var gameImageView: UIImageView!
+  @IBOutlet private weak var gameTitleLabel: UILabel!
+  @IBOutlet private weak var metacriticLabel: UILabel!
+  @IBOutlet private weak var scoreLabel: UILabel!
+  @IBOutlet private weak var genreLabel: UILabel!
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    Nuke.cancelRequest(for: gameImageView)
+    gameImageView.image = nil
+  }
+  
+  func update(_ viewModel: Any?) {
+    guard let viewModel = viewModel as? GamesTableViewCellViewModel else { return }
+    gameTitleLabel.text = viewModel.gameTitle
+    genreLabel.text = viewModel.gameGenres
+    if let score = viewModel.gameScore {
+      metacriticLabel.text = "\(Localization.GamesScreen.critic.translation):"
+      scoreLabel.text = "\(score)"
+      metacriticLabel.isHidden = false
+      scoreLabel.isHidden = false
+    } else {
+      metacriticLabel.isHidden = true
+      scoreLabel.isHidden = true
     }
-
-    func update(_ viewModel: Any?) {
-        guard let viewModel = viewModel as? GamesTableViewCellViewModel else { return }
-        gameTitleLabel.text = viewModel.gameTitle
-        genreLabel.text = viewModel.gameGenres
-        if let score = viewModel.gameScore {
-            metacriticLabel.text = "\(Localization.GamesScreen.critic.translation):"
-            scoreLabel.text = "\(score)"
-            metacriticLabel.isHidden = false
-            scoreLabel.isHidden = false
-        } else {
-            metacriticLabel.isHidden = true
-            scoreLabel.isHidden = true
-        }
-        setImage(url: viewModel.imageUrl)
-    }
-
-    private func setImage(url: String) {
-        let size = bounds.size
-        let workItem = DispatchWorkItem(qos: .userInitiated, block: {
-            let image = ImageDownloader.shared.download(from: url, size: size)
-            DispatchQueue.main.async {
-                self.gameImageView.image = image
-            }
-        })
-        self.workItem = workItem
-        DispatchQueue.global(qos: .userInitiated).async(execute: workItem)
-    }
+    guard let url = URL(string: viewModel.imageUrl) else { return }
+    Nuke.loadImage(with: url, into: gameImageView)
+  }
 }

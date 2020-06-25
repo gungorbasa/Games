@@ -9,8 +9,8 @@
 import Foundation
 
 struct URLTableViewCellViewModel: ReusableCellViewModel, Equatable {
-    var cellType: ReusableCell.Type { return URLTableViewCell.self }
-
-    let title: String
-    let url: String
+  var cellType: ReusableCell.Type { return URLTableViewCell.self }
+  
+  let title: String
+  let url: String
 }

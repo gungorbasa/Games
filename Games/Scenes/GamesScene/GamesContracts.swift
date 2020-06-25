@@ -10,55 +10,55 @@ import Foundation
 
 // MARK: - Interactor
 protocol GamesInteractorProtocol: class {
-
-    var delegate: GamesInteractorDelegate? { get set }
-
-    func search(_ text: String)
-    func fetchGames()
-    func fetchMoreGames()
+  
+  var delegate: GamesInteractorDelegate? { get set }
+  
+  func search(_ text: String)
+  func fetchGames()
+  func fetchMoreGames()
 }
 
 enum GamesInteractorOutput {
-    case fetch(_ games: [Game])
-    case fetchMore(_ games: [Game])
-    case search(_ games: [Game])
-    case show(_ error: Error)
+  case fetch(_ games: [Game])
+  case fetchMore(_ games: [Game])
+  case search(_ games: [Game])
+  case show(_ error: Error)
 }
 
 protocol GamesInteractorDelegate: class {
-
-    func handleOutput(_ output: GamesInteractorOutput)
+  
+  func handleOutput(_ output: GamesInteractorOutput)
 }
 
 // MARK: - Presenter
 protocol GamesPresenterProtocol: class {
-    var viewModels: [ReusableCellViewModel] { get }
-    
-    func onViewDidLoad()
-    func onViewWillAppear()
-    func onPrefetchRows()
-    func onSearchBar(textDidChange searchText: String)
-    func onSearchBarCancelButtonClicked()
-    func onDidSelectRow(at: IndexPath)
+  var viewModels: [ReusableCellViewModel] { get }
+  
+  func onViewDidLoad()
+  func onViewWillAppear()
+  func onPrefetchRows()
+  func onSearchBar(textDidChange searchText: String)
+  func onSearchBarCancelButtonClicked()
+  func onDidSelectRow(at: IndexPath)
 }
 
 enum GamesPresenterOutput: Equatable {
-    case navigationBar(title: String)
-    case reloadData
+  case navigationBar(title: String)
+  case reloadData
 }
 
 // MARK: - View
 protocol GamesViewProtocol: class {
-
-    func handleOutput(_ output: GamesPresenterOutput)
+  
+  func handleOutput(_ output: GamesPresenterOutput)
 }
 
 // MARK: - Router
 enum GamesRoute: Equatable {
-    case details(Game)
+  case details(Game)
 }
 
 protocol GamesRouterProtocol: class {
-
-    func navigate(to route: GamesRoute)
+  
+  func navigate(to route: GamesRoute)
 }

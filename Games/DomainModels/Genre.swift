@@ -9,6 +9,6 @@
 import Foundation
 
 struct Genre: Codable, Equatable {
-    let id: Int
-    let name: String
+  let id: Int
+  let name: String
 }

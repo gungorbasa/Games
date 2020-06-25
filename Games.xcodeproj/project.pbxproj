@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		238BFDEC24A36BDD007043A7 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 238BFDEB24A36BDD007043A7 /* Nuke */; };
+		238BFDF224A3778E007043A7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 238BFDF124A3778E007043A7 /* Alamofire */; };
 		239E994323C8F4E7003BDA1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E994223C8F4E7003BDA1B /* AppDelegate.swift */; };
 		239E994523C8F4E7003BDA1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E994423C8F4E7003BDA1B /* SceneDelegate.swift */; };
-		239E994723C8F4E7003BDA1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E994623C8F4E7003BDA1B /* ViewController.swift */; };
 		239E994C23C8F4E7003BDA1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239E994B23C8F4E7003BDA1B /* Assets.xcassets */; };
 		239E994F23C8F4E7003BDA1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239E994D23C8F4E7003BDA1B /* LaunchScreen.storyboard */; };
 		239E995A23C8F4E7003BDA1B /* GamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E995923C8F4E7003BDA1B /* GamesTests.swift */; };
@@ -50,11 +51,8 @@
 		239E99F423C9450E003BDA1B /* GameRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F323C9450E003BDA1B /* GameRoute.swift */; };
 		239E99F623C9B750003BDA1B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F523C9B750003BDA1B /* Service.swift */; };
 		239E99FA23C9C93B003BDA1B /* GameCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99F923C9C93B003BDA1B /* GameCellFactory.swift */; };
-		239E99FC23C9D31C003BDA1B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99FB23C9D31C003BDA1B /* UIImageView.swift */; };
 		239E99FE23C9E01B003BDA1B /* GameCellFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E99FD23C9E01B003BDA1B /* GameCellFactoryTest.swift */; };
 		239E9A0523CA12FC003BDA1B /* GameSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A0423CA12FC003BDA1B /* GameSearchService.swift */; };
-		239E9A0723CA7455003BDA1B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A0623CA7455003BDA1B /* ImageCache.swift */; };
-		239E9A0923CA75D4003BDA1B /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A0823CA75D4003BDA1B /* ImageDownloader.swift */; };
 		239E9A1223CA7DDB003BDA1B /* GameDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239E9A0B23CA7DDB003BDA1B /* GameDetails.storyboard */; };
 		239E9A1323CA7DDB003BDA1B /* GameDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A0C23CA7DDB003BDA1B /* GameDetailsPresenter.swift */; };
 		239E9A1423CA7DDB003BDA1B /* GameDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A0D23CA7DDB003BDA1B /* GameDetailsRouter.swift */; };
@@ -78,6 +76,7 @@
 		239E9A4123CB428F003BDA1B /* GameDetailsFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4023CB428F003BDA1B /* GameDetailsFactoryTest.swift */; };
 		239E9A4523CD27B2003BDA1B /* UserDefaultDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4423CD27B2003BDA1B /* UserDefaultDatabaseTests.swift */; };
 		239E9A4723CD2BAB003BDA1B /* GameListServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4623CD2BAB003BDA1B /* GameListServiceTest.swift */; };
+		23F862A024A483E700207DE6 /* HTTPResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F8629F24A483E700207DE6 /* HTTPResponseError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +93,6 @@
 		239E993F23C8F4E7003BDA1B /* Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		239E994223C8F4E7003BDA1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		239E994423C8F4E7003BDA1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		239E994623C8F4E7003BDA1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		239E994B23C8F4E7003BDA1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		239E994E23C8F4E7003BDA1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		239E995023C8F4E7003BDA1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,11 +136,8 @@
 		239E99F323C9450E003BDA1B /* GameRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoute.swift; sourceTree = "<group>"; };
 		239E99F523C9B750003BDA1B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		239E99F923C9C93B003BDA1B /* GameCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellFactory.swift; sourceTree = "<group>"; };
-		239E99FB23C9D31C003BDA1B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		239E99FD23C9E01B003BDA1B /* GameCellFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellFactoryTest.swift; sourceTree = "<group>"; };
 		239E9A0423CA12FC003BDA1B /* GameSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSearchService.swift; sourceTree = "<group>"; };
-		239E9A0623CA7455003BDA1B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		239E9A0823CA75D4003BDA1B /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		239E9A0B23CA7DDB003BDA1B /* GameDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameDetails.storyboard; sourceTree = "<group>"; };
 		239E9A0C23CA7DDB003BDA1B /* GameDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsPresenter.swift; sourceTree = "<group>"; };
 		239E9A0D23CA7DDB003BDA1B /* GameDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsRouter.swift; sourceTree = "<group>"; };
@@ -166,6 +161,7 @@
 		239E9A4023CB428F003BDA1B /* GameDetailsFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsFactoryTest.swift; sourceTree = "<group>"; };
 		239E9A4423CD27B2003BDA1B /* UserDefaultDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultDatabaseTests.swift; sourceTree = "<group>"; };
 		239E9A4623CD2BAB003BDA1B /* GameListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListServiceTest.swift; sourceTree = "<group>"; };
+		23F8629F24A483E700207DE6 /* HTTPResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +169,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238BFDEC24A36BDD007043A7 /* Nuke in Frameworks */,
+				238BFDF224A3778E007043A7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,12 +214,9 @@
 				239E99D423C90CC6003BDA1B /* Utils */,
 				239E994223C8F4E7003BDA1B /* AppDelegate.swift */,
 				239E994423C8F4E7003BDA1B /* SceneDelegate.swift */,
-				239E994623C8F4E7003BDA1B /* ViewController.swift */,
 				239E994B23C8F4E7003BDA1B /* Assets.xcassets */,
 				239E994D23C8F4E7003BDA1B /* LaunchScreen.storyboard */,
 				239E995023C8F4E7003BDA1B /* Info.plist */,
-				239E9A0623CA7455003BDA1B /* ImageCache.swift */,
-				239E9A0823CA75D4003BDA1B /* ImageDownloader.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -244,7 +239,6 @@
 			children = (
 				239E997023C8FA84003BDA1B /* UITableView+Reusable.swift */,
 				239E99E623C92580003BDA1B /* URLSession.swift */,
-				239E99FB23C9D31C003BDA1B /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +288,7 @@
 				239E99E023C924FD003BDA1B /* Networking.swift */,
 				239E99E223C9251F003BDA1B /* Routing.swift */,
 				239E99E423C92554003BDA1B /* NativeNetworking.swift */,
+				23F8629F24A483E700207DE6 /* HTTPResponseError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -443,6 +438,10 @@
 			dependencies = (
 			);
 			name = Games;
+			packageProductDependencies = (
+				238BFDEB24A36BDD007043A7 /* Nuke */,
+				238BFDF124A3778E007043A7 /* Alamofire */,
+			);
 			productName = Games;
 			productReference = 239E993F23C8F4E7003BDA1B /* Games.app */;
 			productType = "com.apple.product-type.application";
@@ -493,6 +492,10 @@
 				Base,
 			);
 			mainGroup = 239E993623C8F4E7003BDA1B;
+			packageReferences = (
+				238BFDEA24A36BDC007043A7 /* XCRemoteSwiftPackageReference "Nuke" */,
+				238BFDF024A3778E007043A7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 239E994023C8F4E7003BDA1B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -545,16 +548,14 @@
 				239E99E123C924FD003BDA1B /* Networking.swift in Sources */,
 				239E99FA23C9C93B003BDA1B /* GameCellFactory.swift in Sources */,
 				239E99DF23C91527003BDA1B /* ReusableCellViewModel.swift in Sources */,
-				239E994723C8F4E7003BDA1B /* ViewController.swift in Sources */,
 				239E994323C8F4E7003BDA1B /* AppDelegate.swift in Sources */,
 				239E99CC23C9052C003BDA1B /* FavoritesContracts.swift in Sources */,
-				239E99FC23C9D31C003BDA1B /* UIImageView.swift in Sources */,
 				239E99E523C92554003BDA1B /* NativeNetworking.swift in Sources */,
 				239E99CB23C9052C003BDA1B /* FavoritesRouter.swift in Sources */,
-				239E9A0923CA75D4003BDA1B /* ImageDownloader.swift in Sources */,
 				239E9A1723CA7DDB003BDA1B /* GameDetailsBuilder.swift in Sources */,
 				239E9A1B23CA8E14003BDA1B /* LocalDataManager.swift in Sources */,
 				239E997323C8FEB1003BDA1B /* GamesTabBarViewController.swift in Sources */,
+				23F862A024A483E700207DE6 /* HTTPResponseError.swift in Sources */,
 				239E99D123C9093D003BDA1B /* Images.swift in Sources */,
 				239E9A1523CA7DDB003BDA1B /* GameDetailsContracts.swift in Sources */,
 				239E99CA23C9052C003BDA1B /* FavoritesPresenter.swift in Sources */,
@@ -569,7 +570,6 @@
 				239E9A1423CA7DDB003BDA1B /* GameDetailsRouter.swift in Sources */,
 				239E9A0523CA12FC003BDA1B /* GameSearchService.swift in Sources */,
 				239E9A1823CA7DDB003BDA1B /* GameDetailsInteractor.swift in Sources */,
-				239E9A0723CA7455003BDA1B /* ImageCache.swift in Sources */,
 				239E99CE23C9052C003BDA1B /* FavoritesBuilder.swift in Sources */,
 				239E9A3123CB2823003BDA1B /* URLTableViewCell.swift in Sources */,
 				239E99CD23C9052C003BDA1B /* FavoritesViewController.swift in Sources */,
@@ -855,6 +855,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		238BFDEA24A36BDC007043A7 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.1;
+			};
+		};
+		238BFDF024A3778E007043A7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		238BFDEB24A36BDD007043A7 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 238BFDEA24A36BDC007043A7 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		238BFDF124A3778E007043A7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 238BFDF024A3778E007043A7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 239E993723C8F4E7003BDA1B /* Project object */;
 }

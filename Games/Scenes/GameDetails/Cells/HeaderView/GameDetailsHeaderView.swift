@@ -7,25 +7,17 @@
 //
 
 import UIKit
+import Nuke
 
 final class GameDetailsHeaderView: UIView, NibLoadable, ReusableCell {
-
-    @IBOutlet weak var headerImageView: UIImageView!
-    @IBOutlet weak var headerTitleLabel: UILabel!
-
-    func update(_ viewModel: Any?) {
-        guard let viewModel = viewModel as? GameDetailsHeaderViewModel else { return }
-        setImage(url: viewModel.url ?? "")
-        headerTitleLabel.text = viewModel.title
-    }
-
-    private func setImage(url: String) {
-        let size = bounds.size
-        DispatchQueue.global(qos: .userInitiated).async {
-            let image = ImageDownloader.shared.download(from: url, size: size)
-            DispatchQueue.main.async {
-                self.headerImageView.image = image
-            }
-        }
-    }
+  
+  @IBOutlet weak var headerImageView: UIImageView!
+  @IBOutlet weak var headerTitleLabel: UILabel!
+  
+  func update(_ viewModel: Any?) {
+    guard let viewModel = viewModel as? GameDetailsHeaderViewModel else { return }
+    headerTitleLabel.text = viewModel.title
+    guard let url = URL(string: viewModel.url ?? "") else { return }
+    Nuke.loadImage(with: url, into: headerImageView)
+  }
 }
