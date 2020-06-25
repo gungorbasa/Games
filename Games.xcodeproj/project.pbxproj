@@ -77,6 +77,7 @@
 		239E9A4523CD27B2003BDA1B /* UserDefaultDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4423CD27B2003BDA1B /* UserDefaultDatabaseTests.swift */; };
 		239E9A4723CD2BAB003BDA1B /* GameListServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4623CD2BAB003BDA1B /* GameListServiceTest.swift */; };
 		23F862A024A483E700207DE6 /* HTTPResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F8629F24A483E700207DE6 /* HTTPResponseError.swift */; };
+		23F862A224A4846100207DE6 /* AlamofireNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F862A124A4846100207DE6 /* AlamofireNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		239E9A4423CD27B2003BDA1B /* UserDefaultDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultDatabaseTests.swift; sourceTree = "<group>"; };
 		239E9A4623CD2BAB003BDA1B /* GameListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListServiceTest.swift; sourceTree = "<group>"; };
 		23F8629F24A483E700207DE6 /* HTTPResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseError.swift; sourceTree = "<group>"; };
+		23F862A124A4846100207DE6 /* AlamofireNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				239E99E223C9251F003BDA1B /* Routing.swift */,
 				239E99E423C92554003BDA1B /* NativeNetworking.swift */,
 				23F8629F24A483E700207DE6 /* HTTPResponseError.swift */,
+				23F862A124A4846100207DE6 /* AlamofireNetworking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				239E99CA23C9052C003BDA1B /* FavoritesPresenter.swift in Sources */,
 				239E99BD23C90414003BDA1B /* GamesViewController.swift in Sources */,
 				239E994523C8F4E7003BDA1B /* SceneDelegate.swift in Sources */,
+				23F862A224A4846100207DE6 /* AlamofireNetworking.swift in Sources */,
 				239E9A3F23CB3F94003BDA1B /* GameDetailsFactory.swift in Sources */,
 				239E99DB23C9149B003BDA1B /* ReusableCell.swift in Sources */,
 				239E99CF23C9052C003BDA1B /* FavoritesInteractor.swift in Sources */,
