@@ -18,8 +18,8 @@ final class FavoritesPresenter: FavoritesPresenterProtocol {
   // This should be injected with a protocol
   private let factory = GameCellFactory()
   
-  var viewModels: [ReusableCellViewModel] = []
-  var games: [Game] = []
+  private var viewModels: [ReusableCellViewModel] = []
+  private var games: [Game] = []
   
   init(_ view: FavoritesViewProtocol, interactor: FavoritesInteractorProtocol, router: FavoritesRouterProtocol) {
     self.view = view

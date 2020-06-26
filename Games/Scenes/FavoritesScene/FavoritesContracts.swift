@@ -31,8 +31,6 @@ protocol FavoritesInteractorDelegate: class {
 // MARK: - Presenter
 protocol FavoritesPresenterProtocol: class {
   
-  var viewModels: [ReusableCellViewModel] { get }
-  
   func onViewWillAppear()
   func numberOfRowsIn(section: Int) -> Int
   func viewModelForRow(at: Int) -> ReusableCellViewModel?
