@@ -14,7 +14,7 @@ final class GamesPresenter: GamesPresenterProtocol {
     case list, search(String)
   }
 
-  var viewModels: [ReusableCellViewModel] = []
+  private var viewModels: [ReusableCellViewModel] = []
 
   private var games: [Game] = []
 
@@ -46,7 +46,9 @@ final class GamesPresenter: GamesPresenterProtocol {
     view.handleOutput(.navigationBar(title: Localization.GamesScreen.title.translation))
   }
 
-  func onPrefetchRows() {
+  func onPrefetchRows(at indexPaths: [IndexPath]) {
+    let threshold = viewModels.count - 2
+    guard (indexPaths.last?.row ?? 0 > threshold || indexPaths.first?.row ?? 0 > threshold) else { return }
     switch state {
     case .list:
       interactor.fetchMoreGames()
@@ -68,6 +70,15 @@ final class GamesPresenter: GamesPresenterProtocol {
   func onDidSelectRow(at: IndexPath) {
     guard at.row < games.count else { return }
     router.navigate(to: .details(games[at.row]))
+  }
+
+  func numberOfRowsInSection() -> Int {
+    return viewModels.count
+  }
+
+  func viewModelForRow(at index: Int) -> ReusableCellViewModel? {
+    guard index < viewModels.count else { return nil }
+    return viewModels[index]
   }
 }
 

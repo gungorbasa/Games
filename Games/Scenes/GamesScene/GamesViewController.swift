@@ -70,12 +70,11 @@ extension GamesViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return presenter.viewModels.count
+    return presenter.numberOfRowsInSection()
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard presenter.viewModels.count > indexPath.row else { return UITableViewCell() }
-    let viewModel = presenter.viewModels[indexPath.row]
+    guard let viewModel = presenter.viewModelForRow(at: indexPath.item) else { return UITableViewCell() }
     let cell = tableView.dequeueReusableCellOf(type: viewModel.cellType, for: indexPath)
     cell.update(viewModel)
     return cell as? UITableViewCell ?? UITableViewCell()
@@ -84,10 +83,7 @@ extension GamesViewController: UITableViewDataSource {
 
 extension GamesViewController: UITableViewDataSourcePrefetching {
   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-    let threshold = presenter.viewModels.count - 2
-    if indexPaths.last?.row ?? 0 > threshold || indexPaths.first?.row ?? 0 > threshold {
-      presenter.onPrefetchRows()
-    }
+    presenter.onPrefetchRows(at: indexPaths)
   }
 }
 

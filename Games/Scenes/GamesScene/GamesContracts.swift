@@ -32,14 +32,16 @@ protocol GamesInteractorDelegate: class {
 
 // MARK: - Presenter
 protocol GamesPresenterProtocol: class {
-  var viewModels: [ReusableCellViewModel] { get }
   
   func onViewDidLoad()
   func onViewWillAppear()
-  func onPrefetchRows()
+  func onPrefetchRows(at indexPath: [IndexPath])
   func onSearchBar(textDidChange searchText: String)
   func onSearchBarCancelButtonClicked()
   func onDidSelectRow(at: IndexPath)
+
+  func numberOfRowsInSection() -> Int
+  func viewModelForRow(at index: Int) -> ReusableCellViewModel?
 }
 
 enum GamesPresenterOutput: Equatable {
