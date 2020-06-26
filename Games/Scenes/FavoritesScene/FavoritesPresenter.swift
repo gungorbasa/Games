@@ -31,6 +31,14 @@ final class FavoritesPresenter: FavoritesPresenterProtocol {
   func onViewWillAppear() {
     interactor.fetchFavorites()
   }
+
+  func numberOfRowsIn(section: Int) -> Int {
+    return viewModels.count
+  }
+
+  func viewModelForRow(at: Int) -> ReusableCellViewModel? {
+    return at < viewModels.count ? viewModels[at] : nil
+  }
   
   func onDidSelectRow(at: IndexPath) {
     router.navigate(to: .details(games[at.row]))
