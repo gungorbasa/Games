@@ -30,7 +30,6 @@ enum Localization {
       case .critic:
         return "metacritic"
       }
-      
     }
   }
   

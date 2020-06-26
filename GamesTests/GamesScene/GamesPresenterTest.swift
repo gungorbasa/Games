@@ -74,7 +74,7 @@ final class GamesPresenterTest: XCTestCase {
     presenter?.onViewDidLoad()
 
     // Where is called
-    presenter?.onPrefetchRows()
+    presenter?.onPrefetchRows(at: [IndexPath(item: 0, section: 0)])
 
     // Then
     XCTAssertTrue(interactor.isFetchMoreGamesCalled, "FetchMore should be called")
@@ -86,7 +86,7 @@ final class GamesPresenterTest: XCTestCase {
     presenter?.onSearchBar(textDidChange: "asdasd")
 
     // Where is called
-    presenter?.onPrefetchRows()
+    presenter?.onPrefetchRows(at: [IndexPath(item: 0, section: 0)])
 
     // Then
     XCTAssertTrue(interactor.isSearchCalled, "Search method should be called")

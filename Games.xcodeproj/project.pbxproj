@@ -10,6 +10,7 @@
 		238BFDEC24A36BDD007043A7 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 238BFDEB24A36BDD007043A7 /* Nuke */; };
 		238BFDF224A3778E007043A7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 238BFDF124A3778E007043A7 /* Alamofire */; };
 		23912F0724A5B9D6000D2949 /* RootViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23912F0624A5B9D6000D2949 /* RootViewBuilder.swift */; };
+		23912F0924A5C12B000D2949 /* GamesViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23912F0824A5C12B000D2949 /* GamesViewTest.swift */; };
 		239E994323C8F4E7003BDA1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E994223C8F4E7003BDA1B /* AppDelegate.swift */; };
 		239E994523C8F4E7003BDA1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E994423C8F4E7003BDA1B /* SceneDelegate.swift */; };
 		239E994C23C8F4E7003BDA1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239E994B23C8F4E7003BDA1B /* Assets.xcassets */; };
@@ -102,6 +103,7 @@
 
 /* Begin PBXFileReference section */
 		23912F0624A5B9D6000D2949 /* RootViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewBuilder.swift; sourceTree = "<group>"; };
+		23912F0824A5C12B000D2949 /* GamesViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewTest.swift; sourceTree = "<group>"; };
 		239E993F23C8F4E7003BDA1B /* Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		239E994223C8F4E7003BDA1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		239E994423C8F4E7003BDA1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				23F862A624A48B7000207DE6 /* Mocks */,
 				23F862A324A48ADF00207DE6 /* GamesPresenterTest.swift */,
 				23EBF29F24A49E8F004B6B7A /* GamesInteractorTest.swift */,
+				23912F0824A5C12B000D2949 /* GamesViewTest.swift */,
 			);
 			path = GamesScene;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				23EBF2A424A49FFD004B6B7A /* GameSearchServiceMock.swift in Sources */,
 				239E99FE23C9E01B003BDA1B /* GameCellFactoryTest.swift in Sources */,
 				239E9A4123CB428F003BDA1B /* GameDetailsFactoryTest.swift in Sources */,
+				23912F0924A5C12B000D2949 /* GamesViewTest.swift in Sources */,
 				239E995A23C8F4E7003BDA1B /* GamesTests.swift in Sources */,
 				23F862A824A48B8E00207DE6 /* GamesViewMock.swift in Sources */,
 				23F862AE24A48CB800207DE6 /* GamesCellFactoryMock.swift in Sources */,
