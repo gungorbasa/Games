@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		238BFDEC24A36BDD007043A7 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 238BFDEB24A36BDD007043A7 /* Nuke */; };
 		238BFDF224A3778E007043A7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 238BFDF124A3778E007043A7 /* Alamofire */; };
+		23912F0724A5B9D6000D2949 /* RootViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23912F0624A5B9D6000D2949 /* RootViewBuilder.swift */; };
 		239E994323C8F4E7003BDA1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E994223C8F4E7003BDA1B /* AppDelegate.swift */; };
 		239E994523C8F4E7003BDA1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E994423C8F4E7003BDA1B /* SceneDelegate.swift */; };
 		239E994C23C8F4E7003BDA1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239E994B23C8F4E7003BDA1B /* Assets.xcassets */; };
@@ -100,6 +101,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23912F0624A5B9D6000D2949 /* RootViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewBuilder.swift; sourceTree = "<group>"; };
 		239E993F23C8F4E7003BDA1B /* Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		239E994223C8F4E7003BDA1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		239E994423C8F4E7003BDA1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				239E99D423C90CC6003BDA1B /* Utils */,
 				239E994223C8F4E7003BDA1B /* AppDelegate.swift */,
 				239E994423C8F4E7003BDA1B /* SceneDelegate.swift */,
+				23912F0624A5B9D6000D2949 /* RootViewBuilder.swift */,
 				239E994B23C8F4E7003BDA1B /* Assets.xcassets */,
 				239E994D23C8F4E7003BDA1B /* LaunchScreen.storyboard */,
 				239E995023C8F4E7003BDA1B /* Info.plist */,
@@ -613,6 +616,7 @@
 				239E99CF23C9052C003BDA1B /* FavoritesInteractor.swift in Sources */,
 				239E99E323C9251F003BDA1B /* Routing.swift in Sources */,
 				239E99EE23C942C6003BDA1B /* GameList.swift in Sources */,
+				23912F0724A5B9D6000D2949 /* RootViewBuilder.swift in Sources */,
 				239E99D323C90BF2003BDA1B /* Localization.swift in Sources */,
 				239E9A1423CA7DDB003BDA1B /* GameDetailsRouter.swift in Sources */,
 				239E9A0523CA12FC003BDA1B /* GameSearchService.swift in Sources */,

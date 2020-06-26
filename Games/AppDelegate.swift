@@ -15,17 +15,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    createRootViewController()
+    self.window = RootViewBuilder.make()
+    self.window?.makeKeyAndVisible()
     return true
-  }
-  
-  func createRootViewController() {
-    let window = UIWindow(frame: UIScreen.main.bounds)
-    let nav1 = UINavigationController()
-    nav1.viewControllers = [GamesTabBarController()]
-    window.rootViewController = nav1
-    self.window = window
-    window.makeKeyAndVisible()
   }
   
   // MARK: UISceneSession Lifecycle
