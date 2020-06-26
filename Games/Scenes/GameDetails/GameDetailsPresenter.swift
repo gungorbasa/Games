@@ -19,16 +19,17 @@ final class GameDetailsPresenter: GameDetailsPresenterProtocol {
   }
   private let factory: GameDetailsFactoring
 
-  var viewModels: [ReusableCellViewModel] = []
-
-  var game: Game!
+  private var viewModels: [ReusableCellViewModel] = []
+  private var game: Game
 
   init(
-    _ view: GameDetailsViewProtocol,
+    game: Game,
+    view: GameDetailsViewProtocol,
     interactor: GameDetailsInteractorProtocol,
     router: GameDetailsRouterProtocol,
     factory: GameDetailsFactoring = GameDetailsFactory()
   ) {
+    self.game = game
     self.view = view
     self.interactor = interactor
     self.router = router
@@ -59,6 +60,14 @@ final class GameDetailsPresenter: GameDetailsPresenterProtocol {
 
   func onViewWillDisappear() {
     view.removeRightBarButtonItem()
+  }
+
+  func numberOfRowsIn(section: Int) -> Int {
+    return viewModels.count
+  }
+
+  func viewModelForRow(at index: Int) -> ReusableCellViewModel? {
+    return index < viewModels.count ? viewModels[index]: nil
   }
 
   func onDidSelectRow(_ indexPath: IndexPath) {

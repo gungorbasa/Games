@@ -62,12 +62,11 @@ extension GameDetailsViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return presenter.viewModels.count
+    return presenter.numberOfRowsIn(section: section)
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard presenter.viewModels.count > indexPath.row else { return UITableViewCell() }
-    let viewModel = presenter.viewModels[indexPath.row]
+    guard let viewModel = presenter.viewModelForRow(at: indexPath.item) else { return UITableViewCell() }
     let cell = tableView.dequeueReusableCellOf(type: viewModel.cellType, for: indexPath)
     cell.update(viewModel)
     return cell as? UITableViewCell ?? UITableViewCell()

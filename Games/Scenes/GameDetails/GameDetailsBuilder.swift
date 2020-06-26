@@ -10,7 +10,7 @@ import UIKit
 
 final class GameDetailsBuilder {
   
-  static func make() -> GameDetailsViewController {
+  static func make(_ game: Game) -> GameDetailsViewController {
     let storyboard = UIStoryboard(name: "GameDetails", bundle: nil)
     let view = storyboard.instantiateViewController(
       withIdentifier: "GameDetailsViewController"
@@ -20,7 +20,7 @@ final class GameDetailsBuilder {
     let service = GameDetailsService()
     let database = UserDefaultsDatabase()
     let interactor = GameDetailsInteractor(service, database: database)
-    let presenter = GameDetailsPresenter(view, interactor: interactor, router: router)
+    let presenter = GameDetailsPresenter(game: game, view: view, interactor: interactor, router: router)
     view.presenter = presenter
     return view
   }

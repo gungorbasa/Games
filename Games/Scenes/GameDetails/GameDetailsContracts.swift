@@ -32,12 +32,11 @@ protocol GameDetailsInteractorDelegate: class {
 // MARK: - Presenter
 protocol GameDetailsPresenterProtocol: class {
   
-  var viewModels: [ReusableCellViewModel] { get }
-  var game: Game! { get set }
-  
   func onViewDidLoad()
   func onViewWillAppear()
   func onViewWillDisappear()
+  func numberOfRowsIn(section: Int) -> Int
+  func viewModelForRow(at index: Int) -> ReusableCellViewModel?
   func onDidSelectRow(_ indexPath: IndexPath)
   func favor()
   func unfavor()

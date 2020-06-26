@@ -20,8 +20,7 @@ final class GamesRouter: GamesRouterProtocol {
     let navigationController = view.tabBarController?.navigationController
     switch route {
     case .details(let game):
-      let viewController = GameDetailsBuilder.make()
-      viewController.presenter.game = game
+      let viewController = GameDetailsBuilder.make(game)
       navigationController?.pushViewController(viewController, animated: true)
     }
   }
