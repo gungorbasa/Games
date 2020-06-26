@@ -45,6 +45,7 @@ private extension GamesViewController {
     if tabBarController?.navigationItem.searchController == nil {
       let searchController = UISearchController(searchResultsController: nil)
       searchController.searchBar.delegate = self
+      searchController.dimsBackgroundDuringPresentation = false
       tabBarController?.navigationItem.searchController = searchController
     }
   }

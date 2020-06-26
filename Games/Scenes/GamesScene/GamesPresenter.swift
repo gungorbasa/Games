@@ -96,7 +96,7 @@ extension GamesPresenter: GamesInteractorDelegate {
           self.games.append(contentsOf: games)
           self.view.handleOutput(.reloadData)
         case .search(let games):
-          self.games.append(contentsOf: games)
+          self.games = games
           self.viewModels = self.factory.games(from: games)
           self.view.handleOutput(.reloadData)
       case .show(let error):
