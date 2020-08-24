@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 final class AlamofireNetwork: Networking {
+  
   private let session: Session
 
   init(session: Session = Session()) {

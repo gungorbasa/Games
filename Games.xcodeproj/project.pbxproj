@@ -78,6 +78,13 @@
 		239E9A4123CB428F003BDA1B /* GameDetailsFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4023CB428F003BDA1B /* GameDetailsFactoryTest.swift */; };
 		239E9A4523CD27B2003BDA1B /* UserDefaultDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4423CD27B2003BDA1B /* UserDefaultDatabaseTests.swift */; };
 		239E9A4723CD2BAB003BDA1B /* GameListServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239E9A4623CD2BAB003BDA1B /* GameListServiceTest.swift */; };
+		23E1961A24AA26D000D09893 /* ChatScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E1961324AA26D000D09893 /* ChatScene.storyboard */; };
+		23E1961B24AA26D000D09893 /* ChatScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E1961424AA26D000D09893 /* ChatScenePresenter.swift */; };
+		23E1961C24AA26D000D09893 /* ChatSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E1961524AA26D000D09893 /* ChatSceneRouter.swift */; };
+		23E1961D24AA26D000D09893 /* ChatSceneContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E1961624AA26D000D09893 /* ChatSceneContracts.swift */; };
+		23E1961E24AA26D000D09893 /* ChatSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E1961724AA26D000D09893 /* ChatSceneViewController.swift */; };
+		23E1961F24AA26D000D09893 /* ChatSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E1961824AA26D000D09893 /* ChatSceneBuilder.swift */; };
+		23E1962024AA26D000D09893 /* ChatSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E1961924AA26D000D09893 /* ChatSceneInteractor.swift */; };
 		23EBF2A024A49E8F004B6B7A /* GamesInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBF29F24A49E8F004B6B7A /* GamesInteractorTest.swift */; };
 		23EBF2A224A49EF8004B6B7A /* GameListServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBF2A124A49EF8004B6B7A /* GameListServiceMock.swift */; };
 		23EBF2A424A49FFD004B6B7A /* GameSearchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBF2A324A49FFD004B6B7A /* GameSearchServiceMock.swift */; };
@@ -175,6 +182,13 @@
 		239E9A4023CB428F003BDA1B /* GameDetailsFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsFactoryTest.swift; sourceTree = "<group>"; };
 		239E9A4423CD27B2003BDA1B /* UserDefaultDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultDatabaseTests.swift; sourceTree = "<group>"; };
 		239E9A4623CD2BAB003BDA1B /* GameListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListServiceTest.swift; sourceTree = "<group>"; };
+		23E1961324AA26D000D09893 /* ChatScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatScene.storyboard; sourceTree = "<group>"; };
+		23E1961424AA26D000D09893 /* ChatScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScenePresenter.swift; sourceTree = "<group>"; };
+		23E1961524AA26D000D09893 /* ChatSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSceneRouter.swift; sourceTree = "<group>"; };
+		23E1961624AA26D000D09893 /* ChatSceneContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSceneContracts.swift; sourceTree = "<group>"; };
+		23E1961724AA26D000D09893 /* ChatSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSceneViewController.swift; sourceTree = "<group>"; };
+		23E1961824AA26D000D09893 /* ChatSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSceneBuilder.swift; sourceTree = "<group>"; };
+		23E1961924AA26D000D09893 /* ChatSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSceneInteractor.swift; sourceTree = "<group>"; };
 		23EBF29F24A49E8F004B6B7A /* GamesInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesInteractorTest.swift; sourceTree = "<group>"; };
 		23EBF2A124A49EF8004B6B7A /* GameListServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListServiceMock.swift; sourceTree = "<group>"; };
 		23EBF2A324A49FFD004B6B7A /* GameSearchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSearchServiceMock.swift; sourceTree = "<group>"; };
@@ -284,6 +298,7 @@
 		239E999323C90398003BDA1B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				23E1960424AA265F00D09893 /* New Group */,
 				239E99A323C903E1003BDA1B /* GamesScene */,
 				239E99C123C90516003BDA1B /* FavoritesScene */,
 				239E9A0A23CA7DC0003BDA1B /* GameDetails */,
@@ -449,6 +464,20 @@
 			path = URLCell;
 			sourceTree = "<group>";
 		};
+		23E1960424AA265F00D09893 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				23E1961324AA26D000D09893 /* ChatScene.storyboard */,
+				23E1961424AA26D000D09893 /* ChatScenePresenter.swift */,
+				23E1961524AA26D000D09893 /* ChatSceneRouter.swift */,
+				23E1961624AA26D000D09893 /* ChatSceneContracts.swift */,
+				23E1961724AA26D000D09893 /* ChatSceneViewController.swift */,
+				23E1961824AA26D000D09893 /* ChatSceneBuilder.swift */,
+				23E1961924AA26D000D09893 /* ChatSceneInteractor.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		23F862A524A48B6600207DE6 /* GamesScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				239E99B923C90414003BDA1B /* Games.storyboard in Resources */,
+				23E1961A24AA26D000D09893 /* ChatScene.storyboard in Resources */,
 				239E9A1223CA7DDB003BDA1B /* GameDetails.storyboard in Resources */,
 				239E99D923C9119E003BDA1B /* GamesTableViewCell.xib in Resources */,
 				239E9A3323CB2830003BDA1B /* URLTableViewCell.xib in Resources */,
@@ -598,12 +628,14 @@
 				239E99BE23C90414003BDA1B /* GamesBuilder.swift in Sources */,
 				239E99F623C9B750003BDA1B /* Service.swift in Sources */,
 				239E99E123C924FD003BDA1B /* Networking.swift in Sources */,
+				23E1961D24AA26D000D09893 /* ChatSceneContracts.swift in Sources */,
 				239E99FA23C9C93B003BDA1B /* GameCellFactory.swift in Sources */,
 				239E99DF23C91527003BDA1B /* ReusableCellViewModel.swift in Sources */,
 				239E994323C8F4E7003BDA1B /* AppDelegate.swift in Sources */,
 				239E99CC23C9052C003BDA1B /* FavoritesContracts.swift in Sources */,
 				239E99E523C92554003BDA1B /* NativeNetworking.swift in Sources */,
 				239E99CB23C9052C003BDA1B /* FavoritesRouter.swift in Sources */,
+				23E1961B24AA26D000D09893 /* ChatScenePresenter.swift in Sources */,
 				239E9A1723CA7DDB003BDA1B /* GameDetailsBuilder.swift in Sources */,
 				239E9A1B23CA8E14003BDA1B /* LocalDataManager.swift in Sources */,
 				239E997323C8FEB1003BDA1B /* GamesTabBarViewController.swift in Sources */,
@@ -611,22 +643,26 @@
 				239E99D123C9093D003BDA1B /* Images.swift in Sources */,
 				239E9A1523CA7DDB003BDA1B /* GameDetailsContracts.swift in Sources */,
 				239E99CA23C9052C003BDA1B /* FavoritesPresenter.swift in Sources */,
+				23E1961F24AA26D000D09893 /* ChatSceneBuilder.swift in Sources */,
 				239E99BD23C90414003BDA1B /* GamesViewController.swift in Sources */,
 				239E994523C8F4E7003BDA1B /* SceneDelegate.swift in Sources */,
 				23F862A224A4846100207DE6 /* AlamofireNetworking.swift in Sources */,
 				239E9A3F23CB3F94003BDA1B /* GameDetailsFactory.swift in Sources */,
 				239E99DB23C9149B003BDA1B /* ReusableCell.swift in Sources */,
 				239E99CF23C9052C003BDA1B /* FavoritesInteractor.swift in Sources */,
+				23E1961C24AA26D000D09893 /* ChatSceneRouter.swift in Sources */,
 				239E99E323C9251F003BDA1B /* Routing.swift in Sources */,
 				239E99EE23C942C6003BDA1B /* GameList.swift in Sources */,
 				23912F0724A5B9D6000D2949 /* RootViewBuilder.swift in Sources */,
 				239E99D323C90BF2003BDA1B /* Localization.swift in Sources */,
 				239E9A1423CA7DDB003BDA1B /* GameDetailsRouter.swift in Sources */,
+				23E1962024AA26D000D09893 /* ChatSceneInteractor.swift in Sources */,
 				239E9A0523CA12FC003BDA1B /* GameSearchService.swift in Sources */,
 				239E9A1823CA7DDB003BDA1B /* GameDetailsInteractor.swift in Sources */,
 				239E99CE23C9052C003BDA1B /* FavoritesBuilder.swift in Sources */,
 				239E9A3123CB2823003BDA1B /* URLTableViewCell.swift in Sources */,
 				239E99CD23C9052C003BDA1B /* FavoritesViewController.swift in Sources */,
+				23E1961E24AA26D000D09893 /* ChatSceneViewController.swift in Sources */,
 				239E99EA23C94130003BDA1B /* Game.swift in Sources */,
 				239E99EC23C941E6003BDA1B /* Genre.swift in Sources */,
 				239E997123C8FA84003BDA1B /* UITableView+Reusable.swift in Sources */,
